@@ -25,27 +25,14 @@ module ball_manager (
 	logic [9:0] ballIdx;
 	logic [23:0] colorCounter;
 	
-	wire [19:0] xO;
-    wire [18:0] yO;
-    wire signed [14:0] vxO;
-    wire signed [14:0] vyO;
-	
-	ball ballInst (
-	    .xI(X[ballIdx]),
-	    .yI(Y[ballIdx]),
-	    .vxI(VX[ballIdx]),	 
-	    .vyI(VY[ballIdx]),	
-	    .xO(xO),
-	    .yO(yO),
-	    .vxO(vxO),
-	    .vyO(vyO)
-	);
-	
 	parameter INIT=0, RUN=1;
 	logic state, next_state;
 	
 	logic colorEna;
 	assign colorEna = state==INIT;
+	
+	logic physicsEna;
+	assign physicsEna = state==RUN;
 	
 	always @(*) state<=next_state;
 		
@@ -57,6 +44,25 @@ module ball_manager (
 		.arst(arst),
 		.ena(colorEna),
 		.color(colorCounter)
+	);
+	
+	logic [19:0] xO;
+	logic [18:0] yO;
+	logic signed [14:0] vxO;
+	logic signed [14:0] vyO;
+	
+	physics_engine physicsInst (
+		.ena(physicsEna),
+		.dampen(Dampen),
+		.gravity(Gravity),
+		.xI(X[ballIdx]),
+		.yI(Y[ballIdx]),
+		.vxI(VX[ballIdx]),
+		.vyI(VY[ballIdx]),
+		.xO(xO),
+		.yO(yO),
+		.vxO(vxO),
+		.vyO(vyO)
 	);
 	
 	always_ff @(posedge clk, posedge arst) begin
