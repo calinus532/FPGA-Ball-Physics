@@ -1,27 +1,29 @@
-timestamp=1794123982213
+timestamp=1794128285818
 
 [~A]
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/ball.sv_ball_manager.sv_tb_ball.sv=0*40455*41725
-D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball.sv_ball_manager.sv_random_generator.sv_tb_ball.sv=0*97589*99299
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball.sv_ball_manager.sv_random_generator.sv_color_generator.sv_tb_ball.sv=0*164176*166513
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball.sv_ball_manager.sv_random_generator.sv_tb_ball.sv=0*109800*111526
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball.sv_random_generator.sv=0*73537*74211
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball_manager.sv=0*167829*169116
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/random_generator.sv=0*71740*72278
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/random_generator.sv_tb_ball.sv=0*59086*59971
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/tb_ball.sv=0*32675*33248
-D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/testbench/tb_ball.sv=0*107231*107910
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/testbench/tb_ball.sv=0*161313*162008
 LastVerilogToplevel=tb_ball
-ModifyID=45
+ModifyID=61
 Version=74
 
 [~MFT]
-0=6|0FPGA-Ball-Physics.mgf|107910|53229
-1=4|1FPGA-Ball-Physics.mgf|280528|267818
-3=8|3FPGA-Ball-Physics.mgf|174719|167632
+0=6|0FPGA-Ball-Physics.mgf|169116|87817
+1=4|1FPGA-Ball-Physics.mgf|462355|450217
+3=8|3FPGA-Ball-Physics.mgf|303374|293280
 
 [$root]
-A/$root=22|||1*280122
-BinW64/$root=3*173834
-SLP=3*173949
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|c73a565f2ade592f8ac1c68f484c92160400c0348856a7a6fd785dd2744911b3
+A/$root=22|||1*461949
+BinW64/$root=3*300316
+SLP=3*300431
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|c73a565f2ade592f8ac1c68f484c9216ed8a937f8be5bac5d399d227520c8d1e
 
 [Flip_Flop]
 A/Flip_Flop=22|../src/rtl/random_generator.sv|15|1*177475
@@ -31,38 +33,46 @@ SLP=3*116314
 Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|5630d0077c61440899eb8f708b6d582b51f686fca51eb10a6ae63e5a16379d34de4ed3e30be8a8bf3533694dd1a04df8
 
 [ball]
-A/ball=22|../src/rtl/ball.sv|1|1*256448
-BinW64/ball=3*162490
+A/ball=22|../src/rtl/ball.sv|1|1*447471
+BinW64/ball=3*289640
 R=../src/rtl/ball.sv|1
-SLP=3*162979
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|90f242b29300a057d8fd7974b0c6f484e18efd3e22df3fbef422fe559dd02d6a
+SLP=3*290129
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|90f242b29300a057d8fd7974b0c6f4840b8467c9ec4aa9a3a7cac3315260b743
 
 [ball_manager]
-A/ball_manager=22|../src/rtl/ball_manager.sv|1|1*258147
-BinW64/ball_manager=3*163255
+A/ball_manager=22|../src/rtl/ball_manager.sv|1|1*462355
+BinW64/ball_manager=3*300515
 R=../src/rtl/ball_manager.sv|1
-SLP=3*165883
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|d52c8230b21de0dbfad3a07b7c02074b7e19aa0b3f041d167c8d9e020c9cd8a02128e6d82be69aad91508257e284c90a
+SLP=3*303374
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|d52c8230b21de0dbfad3a07b7c02074b7e19aa0b3f041d167c8d9e020c9cd8a0a966c73af91f35c94fc92b62f9b97982
+
+[color_generator]
+A/color_generator=22|../src/rtl/color_generator.sv|1|1*457109
+BinW64/color_generator=3*295599
+R=../src/rtl/color_generator.sv|1
+SLP=3*298008
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|551b762f9e522f331f5b32758f20f7684d6614e5f85d0ec346f64ad7bcf1bdcd3763482034887e14b50d35d160932d4f
 
 [random_generator]
-A/random_generator=22|../src/rtl/random_generator.sv|1|1*263559
-BinW64/random_generator=3*167138
+A/random_generator=22|../src/rtl/random_generator.sv|1|1*455774
+BinW64/random_generator=3*294649
 R=../src/rtl/random_generator.sv|1
-SLP=3*167727
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|a250fdc9b9e60db0ecc8dbd9d2c650ff59f0eb5a06119eb2072cca42c7d3108d837c4b1deca7b325d39dcb9507214e9a
+SLP=3*295238
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|a250fdc9b9e60db0ecc8dbd9d2c650ff59f0eb5a06119eb2072cca42c7d3108d1809c1a756f8b8fd4c3a24e394298d9e
 
 [tb_ball]
-A/tb_ball=22|../src/testbench/tb_ball.sv|3|1*280528
-BinW64/tb_ball=3*174033
+A/tb_ball=22|../src/testbench/tb_ball.sv|3|1*459490
+BinW64/tb_ball=3*299385
 R=../src/testbench/tb_ball.sv|3
-SLP=3*174719
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|ebc0a1efcc5797b5a3dfdc7e7844f4c426527262ddaa47cb266f3a3c4d9b973ad11d6b89689eb6bc92262e4a23f3d5c9
+SLP=3*300036
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|ebc0a1efcc5797b5a3dfdc7e7844f4c426527262ddaa47cb266f3a3c4d9b973aa31e0a1e6736d0f5aa087116a577437d
 
 [~U]
-$root=12|0*106701|
+$root=12|0*167130|
 Flip_Flop=12|0*65276|
-ball=12|0*96497|
-ball_manager=12|0*96740|
-random_generator=12|0*97111|
-tb_ball=12|0*106995||0x10
+ball=12|0*162814|
+ball_manager=12|0*167440|
+color_generator=12|0*163669|
+random_generator=12|0*163446|
+tb_ball=12|0*163968||0x10
                                                                 

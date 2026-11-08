@@ -10,7 +10,8 @@ module ball_manager (
 		output [19:0] x [999:0],
 		output [18:0] y [999:0],
 		output signed [14:0] vx [999:0],
-		output signed [14:0] vy [999:0]
+		output signed [14:0] vy [999:0],
+		output [23:0] color [999:0]
 	);
 							   
 	localparam maxCount = 1000;
@@ -19,8 +20,10 @@ module ball_manager (
 	logic [18:0] Y [maxCount-1:0];
 	logic signed [14:0] VX [maxCount-1:0];
 	logic signed [14:0] VY [maxCount-1:0];
+	logic [23:0] COLOR [maxCount-1:0];
 	
 	logic [9:0] ballIdx;
+	logic [23:0] colorCounter;
 	
 	wire [19:0] xO;
     wire [18:0] yO;
@@ -29,7 +32,7 @@ module ball_manager (
 	
 	ball ballInst (
 	    .xI(X[ballIdx]),
-	    .yI(X[ballIdx]),
+	    .yI(Y[ballIdx]),
 	    .vxI(VX[ballIdx]),	 
 	    .vyI(VY[ballIdx]),	
 	    .xO(xO),
@@ -38,12 +41,23 @@ module ball_manager (
 	    .vyO(vyO)
 	);
 	
-	logic state, next_state;
 	parameter INIT=0, RUN=1;
+	logic state, next_state;
+	
+	logic colorEna;
+	assign colorEna = state==INIT;
+	
 	always @(*) state<=next_state;
 		
 	logic [19:0] randomValue;
 	random_generator random_inst (clk, arst, randomValue);
+	
+	color_generator colorInst (
+		.clk(clk),
+		.arst(arst),
+		.ena(colorEna),
+		.color(colorCounter)
+	);
 	
 	always_ff @(posedge clk, posedge arst) begin
         if (arst) begin ballIdx <= 0; next_state<=INIT; end
@@ -54,6 +68,7 @@ module ball_manager (
 			        Y[ballIdx]  <= randomValue % 479001;
 			        VX[ballIdx] <= (randomValue % 20001) - 10000;
 			        VY[ballIdx] <= (randomValue % 10001) - 5000;
+					COLOR[ballIdx] <= colorCounter;
 				end
 				RUN: begin
 					X[ballIdx]  <= xO;
@@ -64,7 +79,7 @@ module ball_manager (
 			endcase								 
             if (ballIdx >= Bcount - 1) begin
                 ballIdx <= 0;
-				if(INIT) next_state<=RUN;
+				if(state==INIT) next_state<=RUN;
 			end
             else
                 ballIdx <= ballIdx + 1;
@@ -75,5 +90,6 @@ module ball_manager (
 	assign y = Y;
 	assign vx = VX;
 	assign vy = VY;
+	assign color = COLOR;
 	
 endmodule

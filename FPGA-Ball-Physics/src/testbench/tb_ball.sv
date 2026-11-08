@@ -3,12 +3,13 @@
 module tb_ball ();
 	
 	logic clk=0, arst=1; 
-	parameter Bsize=100, Gravity=0, Dampen=0, Bounce=0, Bcount=1000;
+	logic [9:0] Bsize=100, Gravity=600, Dampen=999, Bounce=950, Bcount=3;
 	
 	logic [19:0] x [999:0];
 	logic [18:0] y [999:0];
 	logic signed [14:0] vx [999:0];
 	logic signed [14:0] vy [999:0];
+	logic [23:0] color [999:0];
 	
 	ball_manager manager_inst(
 	    .clk(clk),
@@ -21,14 +22,15 @@ module tb_ball ();
 		.x(x),
 		.y(y),
 		.vx(vx),
-		.vy(vy)
+		.vy(vy),
+		.color(color)
 	);
 	
 	always #5 clk=~clk;
 		
 	initial begin						
 		#20 arst=0;
-		#10000 $finish;
+		#100000 $finish;
 	end
 	
 endmodule
