@@ -22,6 +22,18 @@ DesignActivationScript=$dsn\design.do
 WireDelay=2
 fileopenfolder=D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\rtl
 DisableIEEEWarnings=0
+AccessACCB=1
+AccessACCR=1
+AccessReadTopLevel=0
+AccessRead=1
+AccessReadWrite=0
+AccessReadWriteSLP=0
+SimulationAccessReadPaths=
+SimulationAccessReadModules=
+SimulationAccessReadWritePaths=
+SimulationAccessReadWriteModules=
+SimulationAccessNetsPaths=
+SimulationAccessNetsModules=
 [HierarchyViewer]
 HierarchyInformation=
 ShowHide=ShowTopLevel
@@ -110,14 +122,14 @@ testbench=1
 constraints=1
 graphics=1
 [Files]
-rtl/ball.sv=-1
 rtl/ball_manager.sv=-1
 rtl/random_generator.sv=-1
 rtl/color_generator.sv=-1
+rtl/physics_engine.sv=-1
 testbench/tb_ball.sv=-1
 [Files.Data]
-.\src\rtl\ball.sv=SystemVerilog Source Code
 .\src\rtl\ball_manager.sv=SystemVerilog Source Code
 .\src\rtl\random_generator.sv=SystemVerilog Source Code
 .\src\rtl\color_generator.sv=SystemVerilog Source Code
+.\src\rtl\physics_engine.sv=SystemVerilog Source Code
 .\src\testbench\tb_ball.sv=SystemVerilog Source Code
