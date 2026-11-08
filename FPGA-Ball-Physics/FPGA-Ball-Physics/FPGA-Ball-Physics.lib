@@ -1,4 +1,4 @@
-timestamp=1794137289475
+timestamp=1794140339209
 
 [~A]
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/ball.sv_ball_manager.sv_tb_ball.sv=0*40455*41725
@@ -6,28 +6,30 @@ D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball.sv_ball_manager.sv_random_ge
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball.sv_ball_manager.sv_random_generator.sv_tb_ball.sv=0*109800*111526
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball.sv_random_generator.sv=0*73537*74211
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball_manager.sv=0*268848*270167
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball_manager.sv_random_generator.sv_color_generator.sv_physics_engine.sv_bounds_detector.sv_tb_ball.sv=0*335213*338395
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball_manager.sv_random_generator.sv_color_generator.sv_physics_engine.sv_tb_ball.sv=0*259303*261954
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball_manager.sv_random_generator.sv_color_generator.sv_tb_ball.sv=0*171032*173121
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/bounds_detector.sv=0*331840*332633
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/physics_engine.sv=0*278336*279096
-D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/physics_engine.sv_ball_manager.sv=0*203542*205023
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/physics_engine.sv_ball_manager.sv=0*313893*315694
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/random_generator.sv=0*71740*72278
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/random_generator.sv_tb_ball.sv=0*59086*59971
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/tb_ball.sv=0*32675*33248
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/testbench/tb_ball.sv=0*272825*273520
-LastVerilogToplevel=physics_engine
-ModifyID=92
+LastVerilogToplevel=tb_ball
+ModifyID=105
 Version=74
 
 [~MFT]
-0=6|0FPGA-Ball-Physics.mgf|279096|150192
-1=4|1FPGA-Ball-Physics.mgf|775538|754815
-3=8|3FPGA-Ball-Physics.mgf|546490|532362
+0=11|0FPGA-Ball-Physics.mgf|338395|182608
+1=14|1FPGA-Ball-Physics.mgf|959639|935369
+3=28|3FPGA-Ball-Physics.mgf|701073|682204
 
 [$root]
-A/$root=22|||1*775116
-BinW64/$root=3*544095
-SLP=3*544210
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|c73a565f2ade592f8ac1c68f484c9216bf8f852b6dea4a6413836d3b3775371d
+A/$root=22|||1*942750
+BinW64/$root=3*683963
+SLP=3*684078
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|c73a565f2ade592f8ac1c68f484c9216db042a94f279d3248027575cb5cbe949
 
 [Flip_Flop]
 A/Flip_Flop=22|../src/rtl/random_generator.sv|15|1*177475
@@ -44,25 +46,32 @@ SLP=3*290129
 Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|90f242b29300a057d8fd7974b0c6f4840b8467c9ec4aa9a3a7cac3315260b743
 
 [ball_manager]
-A/ball_manager=22|../src/rtl/ball_manager.sv|1|1*757051
-BinW64/ball_manager=3*530826
+A/ball_manager=22|../src/rtl/ball_manager.sv|1|1*943172
+BinW64/ball_manager=3*684162
 R=../src/rtl/ball_manager.sv|1
-SLP=3*533716
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|d52c8230b21de0dbfad3a07b7c02074b7e19aa0b3f041d167c8d9e020c9cd8a0810edc654b415f9f1763eed1c0a25b92
+SLP=3*687548
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|d52c8230b21de0dbfad3a07b7c02074b7e19aa0b3f041d167c8d9e020c9cd8a0b139226c918a3b7c95038aa84404502e
+
+[bounds_detector]
+A/bounds_detector=22|../src/rtl/bounds_detector.sv|1|1*957054
+BinW64/bounds_detector=3*697162
+R=../src/rtl/bounds_detector.sv|1
+SLP=3*699359
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|c940dce3b03cf5f7af8de9435886212456262f0c67e215f8172cec9964a0cab548be3cf64ae1d541a3f769f9e9acc9e6
 
 [color_generator]
-A/color_generator=22|../src/rtl/color_generator.sv|1|1*741143
-BinW64/color_generator=3*514831
+A/color_generator=22|../src/rtl/color_generator.sv|1|1*952273
+BinW64/color_generator=3*690297
 R=../src/rtl/color_generator.sv|1
-SLP=3*517240
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|551b762f9e522f331f5b32758f20f7684d6614e5f85d0ec346f64ad7bcf1bdcd2f98d1a07d78646155e4c1b8df74f6ff
+SLP=3*692699
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|551b762f9e522f331f5b32758f20f7684d6614e5f85d0ec346f64ad7bcf1bdcdd920306dcc090bb96010eb4a984b0d4c
 
 [physics_engine]
-A/physics_engine=22|../src/rtl/physics_engine.sv|1|1*775538
-BinW64/physics_engine=3*544294
+A/physics_engine=22|../src/rtl/physics_engine.sv|1|1*954654
+BinW64/physics_engine=3*694076
 R=../src/rtl/physics_engine.sv|1
-SLP=3*546490
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|f4f9f2638aaa37779ffbb4a0468dbdbe66cb5c612456222eaad49ca81384a85914d79baaf84d1c64c45e06d9ab3cea25
+SLP=3*696285
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|f4f9f2638aaa37779ffbb4a0468dbdbe66cb5c612456222eaad49ca81384a859400510b027e7471ec70915a6094976d3
 
 [physiscs_engine]
 A/physiscs_engine=22|../src/rtl/physics_engine.sv|1|1*490554
@@ -72,27 +81,28 @@ SLP=3*323241
 Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|2f6c0ba942a717739a3bdf9b2f45dc94b6084e2573743f27e4c357c896b4f467119db0cc8bcb9226b456553a39f50992
 
 [random_generator]
-A/random_generator=22|../src/rtl/random_generator.sv|1|1*739808
-BinW64/random_generator=3*513881
+A/random_generator=22|../src/rtl/random_generator.sv|1|1*950938
+BinW64/random_generator=3*689347
 R=../src/rtl/random_generator.sv|1
-SLP=3*514470
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|a250fdc9b9e60db0ecc8dbd9d2c650ff59f0eb5a06119eb2072cca42c7d3108d8792518ea5e5e6210bd3cb4d0e4bc151
+SLP=3*689936
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|a250fdc9b9e60db0ecc8dbd9d2c650ff59f0eb5a06119eb2072cca42c7d3108d94b8bccf4857cb5d15c3a48428a0f72f
 
 [tb_ball]
-A/tb_ball=22|../src/testbench/tb_ball.sv|3|1*767097
-BinW64/tb_ball=3*536462
+A/tb_ball=22|../src/testbench/tb_ball.sv|3|1*959639
+BinW64/tb_ball=3*700422
 R=../src/testbench/tb_ball.sv|3
-SLP=3*537113
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|ebc0a1efcc5797b5a3dfdc7e7844f4c426527262ddaa47cb266f3a3c4d9b973af8cff8ec1156af9b7dcd90bd9890eab8
+SLP=3*701073
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|ebc0a1efcc5797b5a3dfdc7e7844f4c426527262ddaa47cb266f3a3c4d9b973a9cf3b2705f6515836b37f1ba11f8f53b
 
 [~U]
-$root=12|0*277734|
+$root=12|0*333131|
 Flip_Flop=12|0*65276|
 ball=12|0*162814|
-ball_manager=12|0*268452|
-color_generator=12|0*258493|
-physics_engine=12|0*278044||0x10
+ball_manager=12|0*333473|
+bounds_detector=12|0*334697|
+color_generator=12|0*334105|
+physics_engine=12|0*334404|
 physiscs_engine=12|0*174974||0x10
-random_generator=12|0*258270|
-tb_ball=12|0*272649||0x10
+random_generator=12|0*333882|
+tb_ball=12|0*334984||0x10
                                                                 

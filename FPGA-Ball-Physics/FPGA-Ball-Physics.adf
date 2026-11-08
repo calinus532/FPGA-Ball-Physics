@@ -126,10 +126,12 @@ rtl/ball_manager.sv=-1
 rtl/random_generator.sv=-1
 rtl/color_generator.sv=-1
 rtl/physics_engine.sv=-1
+rtl/bounds_detector.sv=-1
 testbench/tb_ball.sv=-1
 [Files.Data]
 .\src\rtl\ball_manager.sv=SystemVerilog Source Code
 .\src\rtl\random_generator.sv=SystemVerilog Source Code
 .\src\rtl\color_generator.sv=SystemVerilog Source Code
 .\src\rtl\physics_engine.sv=SystemVerilog Source Code
+.\src\rtl\bounds_detector.sv=SystemVerilog Source Code
 .\src\testbench\tb_ball.sv=SystemVerilog Source Code

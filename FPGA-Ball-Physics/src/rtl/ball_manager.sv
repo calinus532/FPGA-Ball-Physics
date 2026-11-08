@@ -46,10 +46,10 @@ module ball_manager (
 		.color(colorCounter)
 	);
 	
-	logic [19:0] xO;
-	logic [18:0] yO;
-	logic signed [14:0] vxO;
-	logic signed [14:0] vyO;
+	logic signed [20:0] xO [1:0];
+	logic signed [19:0] yO [1:0];
+	logic signed [14:0] vxO [1:0];
+	logic signed [14:0] vyO [1:0];
 	
 	physics_engine physicsInst (
 		.ena(physicsEna),
@@ -59,28 +59,49 @@ module ball_manager (
 		.yI(Y[ballIdx]),
 		.vxI(VX[ballIdx]),
 		.vyI(VY[ballIdx]),
-		.xO(xO),
-		.yO(yO),
-		.vxO(vxO),
-		.vyO(vyO)
+		.xO(xO[0]),
+		.yO(yO[0]),
+		.vxO(vxO[0]),
+		.vyO(vyO[0])
 	);
+	
+	bounds_detector boundsInst (
+		.ena(physicsEna),
+		.Bsize(Bsize),
+		.xI(xO[0]),
+		.yI(yO[0]),
+		.vxI(vxO[0]),
+		.vyI(vyO[0]),
+		.xO(xO[1]),
+		.yO(yO[1]),
+		.vxO(vxO[1]),
+		.vyO(vyO[1])
+	);
+	
+	logic [19:0] radius;
+	logic [19:0] xRange;
+	logic [18:0] yRange;
+	
+	assign radius = Bsize * 500;
+	assign xRange = 640001 - 2*radius;
+	assign yRange = 480001 - 2*radius;
 	
 	always_ff @(posedge clk, posedge arst) begin
         if (arst) begin ballIdx <= 0; next_state<=INIT; end
         else if(Bcount > 0) begin
 			case (state)
 				INIT: begin
-					X[ballIdx]  <= randomValue % 639001;
-			        Y[ballIdx]  <= randomValue % 479001;
+					X[ballIdx] <= radius + (randomValue % xRange);
+					Y[ballIdx] <= radius[18:0] + (randomValue % yRange);
 			        VX[ballIdx] <= (randomValue % 20001) - 10000;
 			        VY[ballIdx] <= (randomValue % 10001) - 5000;
 					COLOR[ballIdx] <= colorCounter;
 				end
 				RUN: begin
-					X[ballIdx]  <= xO;
-		            Y[ballIdx]  <= yO;
-		            VX[ballIdx] <= vxO;
-		            VY[ballIdx] <= vyO;
+					X[ballIdx]  <= xO[1];
+		            Y[ballIdx]  <= yO[1];
+		            VX[ballIdx] <= vxO[1];
+		            VY[ballIdx] <= vyO[1];
 				end
 			endcase								 
             if (ballIdx >= Bcount - 1) begin

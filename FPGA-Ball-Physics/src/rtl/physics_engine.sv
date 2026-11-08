@@ -6,8 +6,8 @@ module physics_engine (
 		input [18:0] yI,
 		input signed [14:0] vxI,
 		input signed [14:0] vyI,
-		output reg [19:0] xO,
-		output reg [18:0] yO,
+		output reg signed [20:0] xO,
+		output reg signed [19:0] yO,
 		output reg signed [14:0] vxO,
 		output reg signed [14:0] vyO
 	);
