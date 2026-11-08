@@ -1,0 +1,1 @@
+-o D:/FPGA-Ball-Physics/FPGA-Ball-Physics/compile -lc D:/FPGA-Ball-Physics/library.cfg -fl D:/FPGA-Ball-Physics/FPGA-Ball-Physics/projlib.cfg -pli "D:/Active-HDL/bin/systf.dll" -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/testbench/tb_ball.sv 

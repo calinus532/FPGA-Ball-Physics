@@ -1,0 +1,11 @@
+[Version]
+Version=17.0
+[Designs]
+fpga-ball-physics=.\FPGA-Ball-Physics\FPGA-Ball-Physics.adf
+[Browser]
+sort=order
+mode=none
+[Order]
+order=1
+[Expand]
+fpga-ball-physics=1
