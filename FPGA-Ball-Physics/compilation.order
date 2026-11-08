@@ -1,0 +1,4 @@
+.\src\rtl\ball.sv
+.\src\rtl\ball_manager.sv
+.\src\rtl\random_generator.sv
+.\src\testbench\tb_ball.sv

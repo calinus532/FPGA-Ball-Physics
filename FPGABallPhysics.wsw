@@ -1,0 +1,13 @@
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\FPGA-Ball-Physics\src/rtl/ball.sv|]
+TemplateId=24
+ActiveDocument=1
+tab=lu
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\FPGA-Ball-Physics\src/rtl/ball_manager.sv|]
+TemplateId=24
+tab=lu
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\FPGA-Ball-Physics\src/testbench/tb_ball.sv|]
+TemplateId=24
+tab=lu
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\FPGA-Ball-Physics\src/rtl/random_generator.sv|]
+TemplateId=24
+tab=lu
