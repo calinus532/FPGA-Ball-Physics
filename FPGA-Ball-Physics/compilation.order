@@ -2,4 +2,5 @@
 .\src\rtl\random_generator.sv
 .\src\rtl\color_generator.sv
 .\src\rtl\physics_engine.sv
+.\src\rtl\bounds_detector.sv
 .\src\testbench\tb_ball.sv

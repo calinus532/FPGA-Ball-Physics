@@ -1,4 +1,4 @@
-Active-HDL 17.0.292.10043 2026-11-08 13:28:09
+Active-HDL 17.0.292.10043 2026-11-08 14:19:01
 
 Elaboration top modules:
 Verilog Module                tb_ball
@@ -12,6 +12,7 @@ ball_manager            | FPGA-Ball-Physics |      | 17.0.292.10043 (Windows64) 
 random_generator        | FPGA-Ball-Physics |      | 17.0.292.10043 (Windows64) | -O2 -j -sv2k23
 color_generator         | FPGA-Ball-Physics |      | 17.0.292.10043 (Windows64) | -O2 -j -sv2k23
 physics_engine          | FPGA-Ball-Physics |      | 17.0.292.10043 (Windows64) | -O2 -j -sv2k23
+bounds_detector         | FPGA-Ball-Physics |      | 17.0.292.10043 (Windows64) | -O2 -j -sv2k23
 ------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------------
@@ -19,3 +20,9 @@ Library                 | Comment
 ------------------------------------------------------------------------------------------------------
 FPGA-Ball-Physics       | None
 ------------------------------------------------------------------------------------------------------
+
+
+Simulation Options: asim -drc -O5 +accb +accr +access +r tb_ball
+
+
+The performance of simulation is reduced. Version Student Edition

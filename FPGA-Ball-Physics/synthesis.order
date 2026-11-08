@@ -3,3 +3,4 @@ i<>.\src\testbench\tb_ball.sv
 i<>.\src\rtl\random_generator.sv
 i<>.\src\rtl\color_generator.sv
 i<>.\src\rtl\physics_engine.sv
+i<>.\src\rtl\bounds_detector.sv
