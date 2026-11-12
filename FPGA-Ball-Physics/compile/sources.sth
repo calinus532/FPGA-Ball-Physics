@@ -1,8 +1,11 @@
 [Files List]
 D:/Active-HDL/vlib/std/src/standard.vhd=S
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/graphics/ball_renderer.sv=S
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/bounds_detector.sv=S
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/physics_engine.sv=S
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/color_generator.sv=S
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/random_generator.sv=S
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/graphics/vga_controller.sv=S
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball_manager.sv=S
-D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/testbench/tb_ball.sv=S
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/top_module.sv=S
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/testbench/tb_top_module.sv=S

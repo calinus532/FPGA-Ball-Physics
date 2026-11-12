@@ -19,18 +19,18 @@ module tb_ball ();
 		.Dampen(Dampen),
 		.Bounce(Bounce),
 		.Bcount(Bcount),
-		.x(x),
-		.y(y),
-		.vx(vx),
-		.vy(vy),
-		.color(color)
+		.X(x),
+		.Y(y),
+		.VX(vx),
+		.VY(vy),
+		.COLOR(color)
 	);
 	
 	always #5 clk=~clk;
 		
 	initial begin						
 		#20 arst=0;
-		#100000 $finish;
+		#17000000 $finish;
 	end
 	
 endmodule

@@ -4,3 +4,8 @@ i<>.\src\rtl\random_generator.sv
 i<>.\src\rtl\color_generator.sv
 i<>.\src\rtl\physics_engine.sv
 i<>.\src\rtl\bounds_detector.sv
+i<>.\src\graphics\vga_controller.sv
+i<>.\src\testbench\tb-vga-graphics.sv
+i<>.\src\graphics\ball_renderer.sv
+i<>.\src\top_module.sv
+i<>.\src\testbench\tb_top_module.sv

@@ -1,78 +1,15 @@
 # ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Elaboration time 0.0 [s].
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Unit top modules: tb_ball.
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Error: VCP2505 testbench/tb_vga_graphics.sv : (34, 7): Duplicate identifier: inst.
+# Info: VCP7802 testbench/tb_vga_graphics.sv : (18, 7): ... see previous "inst" declaration.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Unit top modules: tb_ball tb_vga_graphics.
 # Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
 # done
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Error: VCP2000 rtl/random_generator.sv : (3, 14): Syntax error. Unexpected token: input[_INPUT].
-# Error: VCP2000 rtl/random_generator.sv : (8, 11): Syntax error. Unexpected token: assign[_ASSIGN].
-# Error: VCP1041 testbench/tb_ball.sv : (1, 11): Compiler directive `timescale is not allowed inside a module.
-# Compile failure 3 Errors 0 Warnings  Analysis time: 0[s].
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Unit top modules: random_generator tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-asim -drc -O5 +access +r +m+tb_ball tb_ball
+asim -drc -O5 +accb +accr +access +r tb_vga_graphics
 # ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/testbench/tb_ball.sv
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "Flip_Flop" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Fatal Error: ELAB2_0061 tb_ball.sv (19): Instance name is missing in instantiation of 'random_generator'.
-# ELAB2: Last instance before error: /tb_ball/manager_inst/ballInst
-# KERNEL: Error: E8005 : Kernel process initialization failed.
-# VSIM: Error: Simulation initialization failed.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "Flip_Flop" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Fatal Error: ELAB2_0061 tb_ball.sv (19): Instance name is missing in instantiation of 'random_generator'.
-# ELAB2: Last instance before error: /tb_ball/manager_inst/ballInst
-# KERNEL: Error: E8005 : Kernel process initialization failed.
-# VSIM: Error: Simulation initialization failed.
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "Flip_Flop" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Elaboration time 0.0 [s].
 # VSIM: Stack memory: 32MB
 # VSIM: Retval memory: 32MB
@@ -86,30 +23,506 @@ asim -drc -O5 +access +r +m+tb_ball tb_ball
 # ELAB2: Create instances complete.
 # SLP: Started
 # SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (34): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
+# SLP: Elaboration phase ... done : 0.2 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.6 [s]
+# SLP: Finished : 0.8 [s]
+# SLP: 0 primitives and 16 (100.00%) other processes in SLP
+# SLP: 39 (100.00%) signals in SLP and 0 interface signals
+# ELAB2: Elaboration final pass complete - time: 0.9 [s].
+# KERNEL: SLP loading done - time: 0.1 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4621 kB (elbread=427 elab2=4122 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  12:50 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
+endsim
+# VSIM: Simulation has finished.
+asim -drc -O5 +accb +accr +access +r tb_vga_graphics
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/testbench/tb_vga_graphics.sv
+# Unit top modules: tb_vga_graphics.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
 # SLP: Elaboration phase ... done : 0.0 [s]
 # SLP: Generation phase ...
 # SLP: Generation phase ... done : 0.2 [s]
 # SLP: Finished : 0.3 [s]
-# SLP: 0 primitives and 33 (100.00%) other processes in SLP
-# SLP: 122 (100.00%) signals in SLP and 0 interface signals
+# SLP: 0 primitives and 6 (100.00%) other processes in SLP
+# SLP: 18 (100.00%) signals in SLP and 0 interface signals
 # ELAB2: Elaboration final pass complete - time: 0.3 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4618 kB (elbread=427 elab2=4119 kernel=71 sdf=0)
+# Allocation: Simulator allocated 4614 kB (elbread=427 elab2=4115 kernel=71 sdf=0)
 # KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:13 AM, Sunday, November 8, 2026
+#  12:51 AM, Thursday, November 12, 2026
 #  Simulation has been initialized
-# add wave -noreg {/tb_ball/out}
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Error: VCP2000 rtl/ball_manager.sv : (10, 44): Syntax error. Unexpected token: ;.
+# Error: VCP2000 rtl/ball_manager.sv : (12, 15): Syntax error. Unexpected token: output[_OUTPUT].
+# Error: VCP2000 rtl/ball_manager.sv : (13, 15): Syntax error. Unexpected token: output[_OUTPUT].
+# Error: VCP2000 rtl/ball_manager.sv : (14, 15): Syntax error. Unexpected token: output[_OUTPUT].
+# Error: VCP2000 rtl/ball_manager.sv : (15, 6): Syntax error. Unexpected token: ).
+# Error: VCP2000 rtl/ball_manager.sv : (27, 11): Syntax error. Unexpected token: assign[_ASSIGN].
+# Error: VCP2000 rtl/ball_manager.sv : (30, 11): Syntax error. Unexpected token: assign[_ASSIGN].
+# Error: VCP2000 rtl/ball_manager.sv : (35, 21): Syntax error. Unexpected token: random_generator[_IDENTIFIER].
+# Error: VCP2000 rtl/ball_manager.sv : (49, 19): Syntax error. Unexpected token: physics_engine[_IDENTIFIER].
+# Error: VCP2000 rtl/ball_manager.sv : (80, 11): Syntax error. Unexpected token: assign[_ASSIGN].
+# Error: VCP2020 rtl/ball_manager.sv : (94, 20): begin...end pair(s) mismatch detected. 2 <end> tokens are missing.
+# Error: VCP2020 rtl/ball_manager.sv : (94, 20): case/x/z...endcase pair(s) mismatch detected. 1 <endcase> tokens are missing.
+# Error: VCP2020 rtl/ball_manager.sv : (94, 20): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
+# Error: VCP2000 rtl/ball_manager.sv : (94, 20): Syntax error. Unexpected token: end[_END].
+# Error: VCP2000 rtl/ball_manager.sv : (100, 20): Syntax error. Unexpected token: end[_END].
+# Error: VCP1041 testbench/tb_ball.sv : (1, 11): Compiler directive `timescale is not allowed inside a module.
+# Error: VCP1041 testbench/tb_vga_graphics.sv : (1, 11): Compiler directive `timescale is not allowed inside a module.
+# Compile failure 17 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Error: VCP2872 rtl/ball_manager.sv : (10, 39): Symbol maxCount was used before declaration.
+# Error: VCP2872 rtl/ball_manager.sv : (11, 39): Symbol maxCount was used before declaration.
+# Error: VCP2872 rtl/ball_manager.sv : (12, 47): Symbol maxCount was used before declaration.
+# Error: VCP2872 rtl/ball_manager.sv : (13, 47): Symbol maxCount was used before declaration.
+# Error: VCP2872 rtl/ball_manager.sv : (14, 43): Symbol maxCount was used before declaration.
+# Compile failure 5 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 testbench/tb_ball.sv : (14, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "X", "Y", "VX", "VY", "COLOR".
+# Unit top modules: tb_ball tb_vga_graphics ball_renderer.
+# Compile success 0 Errors 1 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 testbench/tb_ball.sv : (14, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "X", "Y", "VX", "VY", "COLOR".
+# Unit top modules: tb_ball tb_vga_graphics ball_renderer.
+# Compile success 0 Errors 1 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Error: VCP2000 testbench/tb_ball.sv : (25, 16): Syntax error. Unexpected token: ..
+# Error: VCP2000 testbench/tb_ball.sv : (27, 5): Syntax error. Unexpected token: ).
+# Compile failure 2 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2590 testbench/tb_ball.sv : (22, 1): Undefined port x in module ball_manager.
+# Warning: VCP2590 testbench/tb_ball.sv : (23, 1): Undefined port y in module ball_manager.
+# Warning: VCP2590 testbench/tb_ball.sv : (24, 1): Undefined port vx in module ball_manager.
+# Warning: VCP2590 testbench/tb_ball.sv : (25, 1): Undefined port vy in module ball_manager.
+# Warning: VCP2590 testbench/tb_ball.sv : (26, 1): Undefined port color in module ball_manager.
+# Unit top modules: tb_ball tb_vga_graphics ball_renderer.
+# Compile success 0 Errors 5 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Unit top modules: tb_ball tb_vga_graphics ball_renderer.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+asim -drc -O5 +accb +accr +access +r tb_ball
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Warning: SLP_0011 ball_manager.sv (63): Length of connection (21) does not match the length of port "xO" (20) on instance "/tb_ball/manager_inst/boundsInst".
+# SLP: Warning: SLP_0011 ball_manager.sv (63): Length of connection (20) does not match the length of port "yO" (19) on instance "/tb_ball/manager_inst/boundsInst".
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.2 [s]
+# SLP: Finished : 0.2 [s]
+# SLP: 0 primitives and 15 (100.00%) other processes in SLP
+# SLP: 64 (82.05%) signals in SLP and 14 (17.95%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.3 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4694 kB (elbread=427 elab2=4195 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  1:05 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
+# add wave -noreg {/tb_ball/x}
+# add wave -noreg {/tb_ball/y}
+# add wave -noreg {/tb_ball/vx}
+# add wave -noreg {/tb_ball/vy}
+# add wave -noreg {/tb_ball/color}
+# VSIM: 5 object(s) traced.
+# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+endsim
+# VSIM: Simulation has finished.
+# Memory View: Error: You do not have a valid license to run Memory View. Contact Aldec for ordering information - sales@aldec.com
+asim -drc -O5 +accb +accr +access +r tb_ball
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 15 (100.00%) other processes in SLP
+# SLP: 64 (82.05%) signals in SLP and 14 (17.95%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4694 kB (elbread=427 elab2=4195 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  1:20 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Error: VCP2000 top_module.sv : (11, 6): Syntax error. Unexpected token: ).
+# Error: VCP2000 top_module.sv : (17, 17): Syntax error. Unexpected token: ball_manager[_IDENTIFIER].
+# Error: VCP2000 top_module.sv : (33, 19): Syntax error. Unexpected token: vga_controller[_IDENTIFIER].
+# Error: VCP2000 top_module.sv : (41, 11): Syntax error. Unexpected token: assign[_ASSIGN].
+# Error: VCP1041 testbench/tb_ball.sv : (1, 11): Compiler directive `timescale is not allowed inside a module.
+# Error: VCP1041 testbench/tb_vga_graphics.sv : (1, 11): Compiler directive `timescale is not allowed inside a module.
+# Compile failure 6 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Error: VCP2505 rtl/ball_manager.sv : (1, 28): Duplicate identifier: maxCount.
+# Info: VCP7802 top_module.sv : (1, 28): ... see previous "maxCount" declaration.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Error: VCP2000 top_module.sv : (25, 9): Syntax error. Unexpected token: ..
+# Error: VCP2000 top_module.sv : (26, 9): Syntax error. Unexpected token: ..
+# Error: VCP2000 top_module.sv : (27, 9): Syntax error. Unexpected token: ..
+# Error: VCP2000 top_module.sv : (28, 5): Syntax error. Unexpected token: ).
+# Error: VCP2000 top_module.sv : (52, 9): Syntax error. Unexpected token: ,.
+# Error: VCP2000 top_module.sv : (53, 5): Syntax error. Unexpected token: ).
+# Compile failure 6 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Error: VCP2000 top_module.sv : (52, 9): Syntax error. Unexpected token: ,.
+# Error: VCP2000 top_module.sv : (53, 5): Syntax error. Unexpected token: ).
+# Compile failure 2 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Error: VCP2000 top_module.sv : (52, 9): Syntax error. Unexpected token: ,.
+# Error: VCP2000 top_module.sv : (53, 5): Syntax error. Unexpected token: ).
+# Compile failure 2 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 top_module.sv : (33, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON".
+# Unit top modules: FPGA_Ball_Physics tb_ball tb_vga_graphics.
+# Compile success 0 Errors 2 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 top_module.sv : (33, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON".
+# Error: VCP5103 rtl/ball_manager.sv : (10, 39): Undeclared identifier: maxCount.
+# Error: VCP5103 rtl/ball_manager.sv : (11, 39): Undeclared identifier: maxCount.
+# Error: VCP5103 rtl/ball_manager.sv : (12, 47): Undeclared identifier: maxCount.
+# Error: VCP5103 rtl/ball_manager.sv : (13, 47): Undeclared identifier: maxCount.
+# Error: VCP5103 rtl/ball_manager.sv : (14, 43): Undeclared identifier: maxCount.
+# Compile failure 5 Errors 2 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Error: VCP2000 rtl/ball_manager.sv : (2, 15): Syntax error. Unexpected token: localparam[_LOCALPARAM]. This is a Verilog keyword since IEEE Std 1364-2001 and cannot be used as an identifier. Use -v95 argument for compilation.
+# Error: VCP2000 rtl/ball_manager.sv : (3, 10): Syntax error. Unexpected token: input[_INPUT].
+# Error: VCP2000 rtl/ball_manager.sv : (12, 15): Syntax error. Unexpected token: output[_OUTPUT].
+# Error: VCP2000 rtl/ball_manager.sv : (13, 15): Syntax error. Unexpected token: output[_OUTPUT].
+# Error: VCP2000 rtl/ball_manager.sv : (14, 15): Syntax error. Unexpected token: output[_OUTPUT].
+# Error: VCP2000 rtl/ball_manager.sv : (15, 15): Syntax error. Unexpected token: output[_OUTPUT].
+# Error: VCP2000 rtl/ball_manager.sv : (16, 6): Syntax error. Unexpected token: ).
+# Error: VCP2000 rtl/ball_manager.sv : (26, 11): Syntax error. Unexpected token: assign[_ASSIGN].
+# Error: VCP2000 rtl/ball_manager.sv : (29, 11): Syntax error. Unexpected token: assign[_ASSIGN].
+# Error: VCP2000 rtl/ball_manager.sv : (34, 21): Syntax error. Unexpected token: random_generator[_IDENTIFIER].
+# Error: VCP2000 rtl/ball_manager.sv : (48, 19): Syntax error. Unexpected token: physics_engine[_IDENTIFIER].
+# Error: VCP2000 rtl/ball_manager.sv : (79, 11): Syntax error. Unexpected token: assign[_ASSIGN].
+# Error: VCP2020 rtl/ball_manager.sv : (93, 20): begin...end pair(s) mismatch detected. 2 <end> tokens are missing.
+# Error: VCP2020 rtl/ball_manager.sv : (93, 20): case/x/z...endcase pair(s) mismatch detected. 1 <endcase> tokens are missing.
+# Error: VCP2020 rtl/ball_manager.sv : (93, 20): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
+# Error: VCP2000 rtl/ball_manager.sv : (93, 20): Syntax error. Unexpected token: end[_END].
+# Error: VCP2000 rtl/ball_manager.sv : (99, 20): Syntax error. Unexpected token: end[_END].
+# Error: VCP1041 testbench/tb_ball.sv : (1, 11): Compiler directive `timescale is not allowed inside a module.
+# Error: VCP1041 testbench/tb_vga_graphics.sv : (1, 11): Compiler directive `timescale is not allowed inside a module.
+# Compile failure 19 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 top_module.sv : (33, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON".
+# Unit top modules: FPGA_Ball_Physics tb_ball tb_vga_graphics.
+# Compile success 0 Errors 2 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Error: VCP5103 top_module.sv : (45, 34): Undeclared identifier: MAX_BALLS.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 top_module.sv : (33, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON".
+# Error: VCP7263 top_module.sv : (45, 42): Expected a constant as genvar rhs: i<Bcount.
+# Compile failure 1 Errors 2 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 top_module.sv : (33, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON".
+# Error: VCP7263 top_module.sv : (45, 42): Expected a constant as genvar rhs: i<Bcount.
+# Compile failure 1 Errors 2 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 top_module.sv : (33, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON".
+# Unit top modules: FPGA_Ball_Physics tb_ball tb_vga_graphics.
+# Compile success 0 Errors 2 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Error: VCP5101 top_module.sv : (46, 26): Operand (Bcount) is not a constant.
+# Compile failure 1 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 top_module.sv : (33, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON".
+# Unit top modules: FPGA_Ball_Physics tb_ball tb_vga_graphics.
+# Compile success 0 Errors 2 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 top_module.sv : (33, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON".
+# Unit top modules: FPGA_Ball_Physics tb_ball tb_vga_graphics.
+# Compile success 0 Errors 2 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 top_module.sv : (33, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON".
+# Unit top modules: FPGA_Ball_Physics tb_ball tb_vga_graphics.
+# Compile success 0 Errors 2 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 top_module.sv : (33, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON".
+# Unit top modules: FPGA_Ball_Physics tb_ball tb_vga_graphics.
+# Compile success 0 Errors 2 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 top_module.sv : (33, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON".
+# Unit top modules: FPGA_Ball_Physics tb_ball tb_vga_graphics.
+# Compile success 0 Errors 2 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Error: VCP2570 top_module.sv : (30, 12): Undefined port: HSYNC.
+# Error: VCP2570 top_module.sv : (31, 12): Undefined port: VSYNC.
+# Error: VCP2570 top_module.sv : (32, 12): Undefined port: VIDEOON.
+# Compile failure 3 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Unit top modules: FPGA_Ball_Physics tb_ball tb_vga_graphics.
+# Compile success 0 Errors 1 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/testbench/tb_top_module.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2515 testbench/tb_top_module.sv : (16, 7): Undefined module: top_module was used. Port connection rules will not be checked at such instantiations.
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Unit top modules: FPGA_Ball_Physics tb_ball tb_vga_graphics tb_top_module.
+# Compile success 0 Errors 2 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/testbench/tb_top_module.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Unit top modules: tb_ball tb_vga_graphics tb_top_module.
+# Compile success 0 Errors 1 Warnings  Analysis time: 1[s].
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/testbench/tb_top_module.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Unit top modules: tb_ball tb_vga_graphics tb_top_module.
+# Compile success 0 Errors 1 Warnings  Analysis time: 0[s].
+# done
+asim -drc -O5 +accb +accr +access +r tb_top_module
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Warning: SLP_0011 ball_manager.sv (61): Length of connection (21) does not match the length of port "xO" (20) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Warning: SLP_0011 ball_manager.sv (61): Length of connection (20) does not match the length of port "yO" (19) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.7 [s]
+# SLP: Finished : 0.8 [s]
+# SLP: 0 primitives and 10020 (100.00%) other processes in SLP
+# SLP: 19087 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.9 [s].
+# KERNEL: SLP loading done - time: 0.1 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5496 kB (elbread=466 elab2=4958 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  1:44 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+run 100 ns
+# KERNEL: stopped at time: 200 ns
+endsim
+# VSIM: Simulation has finished.
+asim -drc -O5 +accb +accr +access +r tb_top_module
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Error: VCP5103 top_module.sv : (68, 39): Undeclared identifier: bCount.
+# Compile failure 1 Errors 1 Warnings  Analysis time: 0[s].
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 10020 (100.00%) other processes in SLP
+# SLP: 19087 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5496 kB (elbread=466 elab2=4958 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  1:46 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
+# add wave -noreg {/tb_top_module/top_inst/outColor}
 # VSIM: 1 object(s) traced.
+# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
+run 100 ns
+# KERNEL: stopped at time: 100 ns
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/testbench/tb_top_module.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (17, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Unit top modules: tb_ball tb_vga_graphics tb_top_module.
+# Compile success 0 Errors 1 Warnings  Analysis time: 0[s].
+# done
+asim -drc -O5 +accb +accr +access +r tb_top_module
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Warning: SLP_0011 ball_manager.sv (61): Length of connection (21) does not match the length of port "xO" (20) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Warning: SLP_0011 ball_manager.sv (61): Length of connection (20) does not match the length of port "yO" (19) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.8 [s]
+# SLP: Finished : 1.0 [s]
+# SLP: 0 primitives and 10021 (100.00%) other processes in SLP
+# SLP: 19088 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 1.0 [s].
+# KERNEL: SLP loading done - time: 0.1 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5497 kB (elbread=466 elab2=4959 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  1:47 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
 # Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
 run 100 ns
 # KERNEL: stopped at time: 100 ns
@@ -125,22 +538,284 @@ run 100 ns
 # KERNEL: stopped at time: 600 ns
 run 100 ns
 # KERNEL: stopped at time: 700 ns
-run 100 ns
-# KERNEL: stopped at time: 800 ns
-run 100 ns
-# KERNEL: stopped at time: 900 ns
+run
 endsim
+# KERNEL: stopped at time: 3176345 ns
 # VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-asim -drc -O5 +access +r +m+tb_ball tb_ball
+asim -drc -O5 +accb +accr +access +r tb_top_module
 # ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "Flip_Flop" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 10021 (100.00%) other processes in SLP
+# SLP: 19088 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5497 kB (elbread=466 elab2=4959 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  1:52 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
+endsim
+# VSIM: Simulation has finished.
+asim -drc -O5 +accb +accr +access +r tb_top_module
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 10021 (100.00%) other processes in SLP
+# SLP: 19088 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5497 kB (elbread=466 elab2=4959 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  1:54 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
+run
+endsim
+# KERNEL: stopped at time: 6232125 ns
+# VSIM: Simulation has finished.
+asim -drc -O5 +accb +accr +access +r tb_top_module
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/testbench/tb_top_module.sv
+# Unit top modules: tb_top_module.
+# Compile success 0 Errors 0 Warnings  Analysis time: 1[s].
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Warning: SLP_0011 ball_manager.sv (61): Length of connection (21) does not match the length of port "xO" (20) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Warning: SLP_0011 ball_manager.sv (61): Length of connection (20) does not match the length of port "yO" (19) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.9 [s]
+# SLP: Finished : 1.0 [s]
+# SLP: 0 primitives and 10021 (100.00%) other processes in SLP
+# SLP: 19088 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 1.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5497 kB (elbread=466 elab2=4959 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  2:04 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
+run
+endsim
+# KERNEL: stopped at time: 47545 ns
+# VSIM: Simulation has finished.
+asim -drc -O5 +accb +accr +access +r tb_top_module
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/testbench/tb_top_module.sv
+# Unit top modules: tb_top_module.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Warning: SLP_0011 ball_manager.sv (61): Length of connection (21) does not match the length of port "xO" (20) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Warning: SLP_0011 ball_manager.sv (61): Length of connection (20) does not match the length of port "yO" (19) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.8 [s]
+# SLP: Finished : 1.0 [s]
+# SLP: 0 primitives and 10021 (100.00%) other processes in SLP
+# SLP: 19088 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 1.0 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5497 kB (elbread=466 elab2=4959 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  2:05 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
+run
+# RUNTIME: Info: RUNTIME_0068 tb_top_module.sv (22): $finish called.
+# KERNEL: Time: 10020 ns,  Iteration: 0,  Instance: /tb_top_module,  Process: @INITIAL#20_1@.
+# KERNEL: stopped at time: 10020 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+asim -drc -O5 +accb +accr +access +r tb_top_module
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/testbench/tb_top_module.sv
+# Unit top modules: tb_top_module.
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Warning: SLP_0011 ball_manager.sv (61): Length of connection (21) does not match the length of port "xO" (20) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Warning: SLP_0011 ball_manager.sv (61): Length of connection (20) does not match the length of port "yO" (19) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Elaboration phase ... done : 0.2 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.8 [s]
+# SLP: Finished : 1.0 [s]
+# SLP: 0 primitives and 10021 (100.00%) other processes in SLP
+# SLP: 19088 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 1.0 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5497 kB (elbread=466 elab2=4959 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  2:06 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
+run
+# RUNTIME: Info: RUNTIME_0068 tb_top_module.sv (22): $finish called.
+# KERNEL: Time: 100020 ns,  Iteration: 0,  Instance: /tb_top_module,  Process: @INITIAL#20_1@.
+# KERNEL: stopped at time: 100020 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+endsim
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/testbench/tb_top_module.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Error: VCP2000 top_module.sv : (22, 24): Syntax error. Unexpected token: ..
+# Error: VCP2000 top_module.sv : (24, 9): Syntax error. Unexpected token: ..
+# Error: VCP2000 top_module.sv : (25, 9): Syntax error. Unexpected token: ..
+# Error: VCP2000 top_module.sv : (26, 9): Syntax error. Unexpected token: ..
+# Error: VCP2000 top_module.sv : (27, 9): Syntax error. Unexpected token: ..
+# Error: VCP2000 top_module.sv : (28, 9): Syntax error. Unexpected token: ..
+# Error: VCP2000 top_module.sv : (29, 9): Syntax error. Unexpected token: ..
+# Error: VCP2000 top_module.sv : (30, 9): Syntax error. Unexpected token: ..
+# Error: VCP2000 top_module.sv : (31, 5): Syntax error. Unexpected token: ).
+# Compile failure 9 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/testbench/tb_top_module.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (19, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 testbench/tb_ball.sv : (14, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "update".
+# Warning: VCP2597 testbench/tb_vga_graphics.sv : (10, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "update".
+# Unit top modules: tb_ball tb_vga_graphics tb_top_module.
+# Compile success 0 Errors 3 Warnings  Analysis time: 0[s].
+# done
+asim -drc -O5 +accb +accr +access +r tb_top_module
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Elaboration time 0.0 [s].
 # VSIM: Stack memory: 32MB
 # VSIM: Retval memory: 32MB
@@ -154,97 +829,44 @@ asim -drc -O5 +access +r +m+tb_ball tb_ball
 # ELAB2: Create instances complete.
 # SLP: Started
 # SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (34): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Warning: SLP_0011 ball_manager.sv (62): Length of connection (21) does not match the length of port "xO" (20) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Warning: SLP_0011 ball_manager.sv (62): Length of connection (20) does not match the length of port "yO" (19) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Elaboration phase ... done : 0.1 [s]
 # SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.2 [s]
-# SLP: Finished : 0.2 [s]
-# SLP: 0 primitives and 33 (100.00%) other processes in SLP
-# SLP: 122 (100.00%) signals in SLP and 0 interface signals
-# ELAB2: Elaboration final pass complete - time: 0.3 [s].
+# SLP: Generation phase ... done : 0.8 [s]
+# SLP: Finished : 1.0 [s]
+# SLP: 0 primitives and 10021 (100.00%) other processes in SLP
+# SLP: 19091 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 1.0 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4618 kB (elbread=427 elab2=4118 kernel=71 sdf=0)
+# Allocation: Simulator allocated 5501 kB (elbread=466 elab2=4963 kernel=71 sdf=0)
 # KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:14 AM, Sunday, November 8, 2026
+#  2:19 AM, Thursday, November 12, 2026
 #  Simulation has been initialized
 # Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-run 100 ns
-# KERNEL: stopped at time: 100 ns
+run
 endsim
+# KERNEL: stopped at time: 351705 ns
 # VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "Flip_Flop" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/testbench/tb_top_module.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (19, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 testbench/tb_ball.sv : (14, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "update".
+# Warning: VCP2597 testbench/tb_vga_graphics.sv : (10, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "update".
+# Unit top modules: tb_ball tb_vga_graphics tb_top_module.
+# Compile success 0 Errors 3 Warnings  Analysis time: 0[s].
 # done
+asim -drc -O5 +accb +accr +access +r tb_top_module
 # ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "Flip_Flop" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (34): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.2 [s]
-# SLP: Finished : 0.3 [s]
-# SLP: 0 primitives and 28 (100.00%) other processes in SLP
-# SLP: 122 (100.00%) signals in SLP and 0 interface signals
-# ELAB2: Elaboration final pass complete - time: 0.3 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4616 kB (elbread=427 elab2=4117 kernel=71 sdf=0)
-# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:23 AM, Sunday, November 8, 2026
-#  Simulation has been initialized
-# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-endsim
-# VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "Flip_Flop" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Elaboration time 0.0 [s].
 # VSIM: Stack memory: 32MB
 # VSIM: Retval memory: 32MB
@@ -258,47 +880,71 @@ asim -drc -O5 +access +r +m+tb_ball tb_ball
 # ELAB2: Create instances complete.
 # SLP: Started
 # SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (34): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Warning: SLP_0011 ball_manager.sv (62): Length of connection (21) does not match the length of port "xO" (20) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Warning: SLP_0011 ball_manager.sv (62): Length of connection (20) does not match the length of port "yO" (19) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Elaboration phase ... done : 0.1 [s]
 # SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.2 [s]
-# SLP: Finished : 0.2 [s]
-# SLP: 0 primitives and 28 (100.00%) other processes in SLP
-# SLP: 122 (100.00%) signals in SLP and 0 interface signals
-# ELAB2: Elaboration final pass complete - time: 0.3 [s].
+# SLP: Generation phase ... done : 0.8 [s]
+# SLP: Finished : 1.0 [s]
+# SLP: 0 primitives and 10022 (100.00%) other processes in SLP
+# SLP: 19091 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 1.0 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4616 kB (elbread=427 elab2=4117 kernel=71 sdf=0)
+# Allocation: Simulator allocated 5501 kB (elbread=466 elab2=4963 kernel=71 sdf=0)
 # KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:24 AM, Sunday, November 8, 2026
+#  2:24 AM, Thursday, November 12, 2026
 #  Simulation has been initialized
 # Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-run 100 ns
-# KERNEL: stopped at time: 100 ns
-run 100 ns
-# KERNEL: stopped at time: 200 ns
-run 100 ns
-# KERNEL: stopped at time: 300 ns
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
+run
 endsim
+# KERNEL: stopped at time: 1056745 ns
 # VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/testbench/tb_top_module.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (23, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 testbench/tb_ball.sv : (14, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "update".
+# Warning: VCP2597 testbench/tb_vga_graphics.sv : (10, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "update".
+# Warning: VCP2597 testbench/tb_top_module.sv : (8, 1): Some unconnected ports remain at instance: "top_inst". Module "FPGA_Ball_Physics" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON", "outColor".
+# Error: VCP5103 top_module.sv : (19, 30): Undeclared identifier: maxCount.
+# Error: VCP5103 top_module.sv : (20, 30): Undeclared identifier: maxCount.
+# Error: VCP5103 top_module.sv : (21, 34): Undeclared identifier: maxCount.
+# Error: VCP5103 top_module.sv : (51, 38): Undeclared identifier: maxCount.
+# Error: VCP5103 rtl/ball_manager.sv : (13, 39): Undeclared identifier: maxCount.
+# Error: VCP5103 rtl/ball_manager.sv : (14, 39): Undeclared identifier: maxCount.
+# Error: VCP5103 rtl/ball_manager.sv : (15, 47): Undeclared identifier: maxCount.
+# Error: VCP5103 rtl/ball_manager.sv : (16, 47): Undeclared identifier: maxCount.
+# Error: VCP5103 rtl/ball_manager.sv : (17, 43): Undeclared identifier: maxCount.
+# Compile failure 9 Errors 4 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/testbench/tb_top_module.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (23, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 testbench/tb_ball.sv : (14, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "update".
+# Warning: VCP2597 testbench/tb_vga_graphics.sv : (10, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "update".
+# Warning: VCP2597 testbench/tb_top_module.sv : (8, 1): Some unconnected ports remain at instance: "top_inst". Module "FPGA_Ball_Physics" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON", "outColor".
+# Error: VCP5103 rtl/ball_manager.sv : (13, 39): Undeclared identifier: maxCount.
+# Error: VCP5103 rtl/ball_manager.sv : (14, 39): Undeclared identifier: maxCount.
+# Error: VCP5103 rtl/ball_manager.sv : (15, 47): Undeclared identifier: maxCount.
+# Error: VCP5103 rtl/ball_manager.sv : (16, 47): Undeclared identifier: maxCount.
+# Error: VCP5103 rtl/ball_manager.sv : (17, 43): Undeclared identifier: maxCount.
+# Compile failure 5 Errors 4 Warnings  Analysis time: 0[s].
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/testbench/tb_top_module.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (23, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 testbench/tb_ball.sv : (14, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "update".
+# Warning: VCP2597 testbench/tb_vga_graphics.sv : (10, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "update".
+# Warning: VCP2597 testbench/tb_top_module.sv : (8, 1): Some unconnected ports remain at instance: "top_inst". Module "FPGA_Ball_Physics" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON", "outColor".
+# Unit top modules: tb_ball tb_vga_graphics tb_top_module.
+# Compile success 0 Errors 4 Warnings  Analysis time: 0[s].
+# done
+asim -drc -O5 +accb +accr +access +r tb_top_module
 # ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "Flip_Flop" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Elaboration time 0.0 [s].
 # VSIM: Stack memory: 32MB
 # VSIM: Retval memory: 32MB
@@ -312,29 +958,172 @@ asim -drc -O5 +access +r +m+tb_ball tb_ball
 # ELAB2: Create instances complete.
 # SLP: Started
 # SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (34): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Warning: SLP_0011 ball_manager.sv (64): Length of connection (21) does not match the length of port "xO" (20) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Warning: SLP_0011 ball_manager.sv (64): Length of connection (20) does not match the length of port "yO" (19) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Elaboration phase ... done : 0.1 [s]
 # SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.2 [s]
-# SLP: Finished : 0.2 [s]
-# SLP: 0 primitives and 28 (100.00%) other processes in SLP
-# SLP: 122 (100.00%) signals in SLP and 0 interface signals
-# ELAB2: Elaboration final pass complete - time: 0.3 [s].
+# SLP: Generation phase ... done : 0.8 [s]
+# SLP: Finished : 0.9 [s]
+# SLP: 0 primitives and 10022 (100.00%) other processes in SLP
+# SLP: 19091 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 1.0 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4616 kB (elbread=427 elab2=4117 kernel=71 sdf=0)
+# Allocation: Simulator allocated 5501 kB (elbread=466 elab2=4963 kernel=71 sdf=0)
 # KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:26 AM, Sunday, November 8, 2026
+#  2:31 AM, Thursday, November 12, 2026
 #  Simulation has been initialized
 # Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
+run
+endsim
+# KERNEL: stopped at time: 173305 ns
+# VSIM: Simulation has finished.
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/testbench/tb_top_module.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (23, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 testbench/tb_ball.sv : (14, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "update".
+# Warning: VCP2597 testbench/tb_vga_graphics.sv : (10, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "update".
+# Warning: VCP2597 testbench/tb_top_module.sv : (8, 1): Some unconnected ports remain at instance: "top_inst". Module "FPGA_Ball_Physics" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON", "outColor".
+# Unit top modules: tb_ball tb_vga_graphics tb_top_module.
+# Compile success 0 Errors 4 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/testbench/tb_top_module.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (23, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 testbench/tb_ball.sv : (14, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "update".
+# Warning: VCP2597 testbench/tb_vga_graphics.sv : (10, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "update".
+# Warning: VCP2597 testbench/tb_top_module.sv : (8, 1): Some unconnected ports remain at instance: "top_inst". Module "FPGA_Ball_Physics" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON", "outColor".
+# Unit top modules: tb_ball tb_vga_graphics tb_top_module.
+# Compile success 0 Errors 4 Warnings  Analysis time: 0[s].
+# done
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/top_module.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/rtl/color_generator.sv $dsn/src/rtl/physics_engine.sv $dsn/src/rtl/bounds_detector.sv $dsn/src/testbench/tb_ball.sv $dsn/src/testbench/tb_vga_graphics.sv $dsn/src/testbench/tb_top_module.sv $dsn/src/graphics/vga_controller.sv $dsn/src/graphics/ball_renderer.sv
+# Warning: VCP2597 top_module.sv : (23, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "VX", "VY".
+# Warning: VCP2597 testbench/tb_ball.sv : (14, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "update".
+# Warning: VCP2597 testbench/tb_vga_graphics.sv : (10, 1): Some unconnected ports remain at instance: "vga_inst". Module "vga_controller" has unconnected port(s) : "update".
+# Warning: VCP2597 testbench/tb_top_module.sv : (8, 1): Some unconnected ports remain at instance: "top_inst". Module "FPGA_Ball_Physics" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON", "outColor".
+# Unit top modules: tb_ball tb_vga_graphics tb_top_module.
+# Compile success 0 Errors 4 Warnings  Analysis time: 0[s].
+# done
+asim -drc -O5 +accb +accr +access +r tb_top_module
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball_manager.sv
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Warning: SLP_0011 ball_manager.sv (60): Length of connection (21) does not match the length of port "xO" (20) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Warning: SLP_0011 ball_manager.sv (60): Length of connection (20) does not match the length of port "yO" (19) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.8 [s]
+# SLP: Finished : 1.0 [s]
+# SLP: 0 primitives and 10021 (100.00%) other processes in SLP
+# SLP: 19090 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 1.0 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5500 kB (elbread=466 elab2=4962 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  2:41 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
+run
+endsim
+# KERNEL: stopped at time: 528425 ns
+# VSIM: Simulation has finished.
+asim -drc -O5 +accb +accr +access +r tb_top_module
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball_manager.sv
+# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
+# done
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Warning: SLP_0011 ball_manager.sv (60): Length of connection (21) does not match the length of port "xO" (20) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Warning: SLP_0011 ball_manager.sv (60): Length of connection (20) does not match the length of port "yO" (19) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.8 [s]
+# SLP: Finished : 1.0 [s]
+# SLP: 0 primitives and 10021 (100.00%) other processes in SLP
+# SLP: 19090 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 1.0 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5500 kB (elbread=466 elab2=4962 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  2:44 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
+# add wave -noreg {/tb_top_module/top_inst/manager_inst/ballIdx}
+# VSIM: 1 object(s) traced.
+# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
+# add wave -noreg {/tb_top_module/top_inst/manager_inst/state}
+# VSIM: 1 object(s) traced.
+# add wave -noreg {/tb_top_module/top_inst/manager_inst/X}
+# add wave -noreg {/tb_top_module/top_inst/manager_inst/X(2)}
+# add wave -noreg {/tb_top_module/top_inst/manager_inst/X(1)}
+# add wave -noreg {/tb_top_module/top_inst/manager_inst/X(0)}
+# VSIM: 4 object(s) traced.
+# add wave -noreg {/tb_top_module/top_inst/manager_inst/Y(2)}
+# add wave -noreg {/tb_top_module/top_inst/manager_inst/Y(1)}
+# add wave -noreg {/tb_top_module/top_inst/manager_inst/Y(0)}
+# VSIM: 3 object(s) traced.
 run 100 ns
 # KERNEL: stopped at time: 100 ns
 run 100 ns
@@ -357,207 +1146,36 @@ run 100 ns
 # KERNEL: stopped at time: 1 us
 run 100 ns
 # KERNEL: stopped at time: 1100 ns
-run 100 ns
-# KERNEL: stopped at time: 1200 ns
-run 100 ns
-# KERNEL: stopped at time: 1300 ns
-run 100 ns
-# KERNEL: stopped at time: 1400 ns
-run 100 ns
-# KERNEL: stopped at time: 1500 ns
-run 100 ns
-# KERNEL: stopped at time: 1600 ns
-run 100 ns
-# KERNEL: stopped at time: 1700 ns
-run 100 ns
-# KERNEL: stopped at time: 1800 ns
-run 100 ns
-# KERNEL: stopped at time: 1900 ns
-run 100 ns
-# KERNEL: stopped at time: 2 us
-run 100 ns
-# RUNTIME: Info: RUNTIME_0068 tb_ball.sv (25): $finish called.
-# KERNEL: Time: 2020 ns,  Iteration: 0,  Instance: /tb_ball,  Process: @INITIAL#23_1@.
-# KERNEL: stopped at time: 2020 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-run 100 ns
+run 1000 ns
+# KERNEL: stopped at time: 2100 ns
+run 1000 ns
+# KERNEL: stopped at time: 3100 ns
+run 1000 ns
+# KERNEL: stopped at time: 4100 ns
+run 1000 ns
+# KERNEL: stopped at time: 5100 ns
+run 1000 ns
+# KERNEL: stopped at time: 6100 ns
+run 1000 ns
+# KERNEL: stopped at time: 7100 ns
+run 1000 ns
+# KERNEL: stopped at time: 8100 ns
+run 1000 ns
+# KERNEL: stopped at time: 9100 ns
+run 1000 ns
+# KERNEL: stopped at time: 10100 ns
+run 1000 ns
+# KERNEL: stopped at time: 11100 ns
 endsim
 # VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-asim -drc -O5 +access +r +m+tb_ball tb_ball
+asim -drc -O5 +accb +accr +access +r tb_top_module
 # ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (34): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.2 [s]
-# SLP: Finished : 0.2 [s]
-# SLP: 0 primitives and 8 (100.00%) other processes in SLP
-# SLP: 41 (100.00%) signals in SLP and 0 interface signals
-# ELAB2: Elaboration final pass complete - time: 0.3 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4614 kB (elbread=427 elab2=4115 kernel=71 sdf=0)
-# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:29 AM, Sunday, November 8, 2026
-#  Simulation has been initialized
-# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-run 100 ns
-# KERNEL: stopped at time: 100 ns
-run 100 ns
-# KERNEL: stopped at time: 200 ns
-run 100 ns
-# KERNEL: stopped at time: 300 ns
-run 100 ns
-# KERNEL: stopped at time: 400 ns
-run 100 ns
-# KERNEL: stopped at time: 500 ns
-run 100 ns
-# KERNEL: stopped at time: 600 ns
-endsim
-# VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/random_generator.sv
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (34): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.2 [s]
-# SLP: Finished : 0.2 [s]
-# SLP: 0 primitives and 8 (100.00%) other processes in SLP
-# SLP: 41 (100.00%) signals in SLP and 0 interface signals
-# ELAB2: Elaboration final pass complete - time: 0.2 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4614 kB (elbread=427 elab2=4115 kernel=71 sdf=0)
-# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:29 AM, Sunday, November 8, 2026
-#  Simulation has been initialized
-# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-run 100 ns
-# KERNEL: stopped at time: 100 ns
-endsim
-# VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/random_generator.sv
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (34): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.2 [s]
-# SLP: Finished : 0.2 [s]
-# SLP: 0 primitives and 8 (100.00%) other processes in SLP
-# SLP: 41 (100.00%) signals in SLP and 0 interface signals
-# ELAB2: Elaboration final pass complete - time: 0.3 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4612 kB (elbread=427 elab2=4113 kernel=71 sdf=0)
-# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:32 AM, Sunday, November 8, 2026
-#  Simulation has been initialized
-# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-run
-# RUNTIME: Info: RUNTIME_0068 tb_ball.sv (25): $finish called.
-# KERNEL: Time: 2020 ns,  Iteration: 0,  Instance: /tb_ball,  Process: @INITIAL#23_1@.
-# KERNEL: stopped at time: 2020 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-run @2.12us
-run
-endsim
-# VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Elaboration time 0.0 [s].
 # VSIM: Stack memory: 32MB
 # VSIM: Retval memory: 32MB
@@ -571,57 +1189,77 @@ asim -drc -O5 +access +r +m+tb_ball tb_ball
 # ELAB2: Create instances complete.
 # SLP: Started
 # SLP: Finished. Using existing simulator library
-# SLP: 0 primitives and 8 (100.00%) other processes in SLP
-# SLP: 41 (100.00%) signals in SLP and 0 interface signals
-# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# SLP: 0 primitives and 10021 (100.00%) other processes in SLP
+# SLP: 19090 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4612 kB (elbread=427 elab2=4113 kernel=71 sdf=0)
+# Allocation: Simulator allocated 5500 kB (elbread=466 elab2=4962 kernel=71 sdf=0)
 # KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:32 AM, Sunday, November 8, 2026
+#  2:46 AM, Thursday, November 12, 2026
 #  Simulation has been initialized
 # Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-run 100 ns
-# KERNEL: stopped at time: 100 ns
-run 100 ns
-# KERNEL: stopped at time: 200 ns
-run 100 ns
-# KERNEL: stopped at time: 300 ns
-run 100 ns
-# KERNEL: stopped at time: 400 ns
+# add wave -noreg {/tb_top_module/top_inst/VIDEOON}
+# VSIM: 1 object(s) traced.
+run 1000 ns
+# KERNEL: stopped at time: 1 us
+run 1000 ns
+# KERNEL: stopped at time: 2 us
+run 1000 ns
+# KERNEL: stopped at time: 3 us
+run 1000 ns
+# KERNEL: stopped at time: 4 us
+run 1000 ns
+# KERNEL: stopped at time: 5 us
+run 1000 ns
+# KERNEL: stopped at time: 6 us
+run 1000 ns
+# KERNEL: stopped at time: 7 us
+run 1000 ns
+# KERNEL: stopped at time: 8 us
+run 1000 ns
+# KERNEL: stopped at time: 9 us
+run 1000 ns
+# KERNEL: stopped at time: 10 us
+run 1000 ns
+# KERNEL: stopped at time: 11 us
+run 1000 ns
+# KERNEL: stopped at time: 12 us
+run 1000 ns
+# KERNEL: stopped at time: 13 us
+run 1000 ns
+# KERNEL: stopped at time: 14 us
+run 1000 ns
+# KERNEL: stopped at time: 15 us
+run 1000 ns
+# KERNEL: stopped at time: 16 us
+run 1000 ns
+# KERNEL: stopped at time: 17 us
+run 1000 ns
+# KERNEL: stopped at time: 18 us
+run 1000 ns
+# KERNEL: stopped at time: 19 us
+run 1000 ns
+# KERNEL: stopped at time: 20 us
+run 1000 ns
+# KERNEL: stopped at time: 21 us
+run 1000 ns
+# KERNEL: stopped at time: 22 us
+run 1000 ns
+# KERNEL: stopped at time: 23 us
 endsim
 # VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Error: VCP2000 rtl/ball_manager.sv : (59, 19): Syntax error. Unexpected token: if[_IF].
-# Error: VCP2020 rtl/ball_manager.sv : (65, 20): begin...end pair(s) mismatch detected. 2 <end> tokens are missing.
-# Error: VCP2020 rtl/ball_manager.sv : (65, 20): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
-# Error: VCP2000 rtl/ball_manager.sv : (65, 20): Syntax error. Unexpected token: endcase[_ENDCASE].
-# Compile failure 4 Errors 0 Warnings  Analysis time: 0[s].
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Info: VCP2876 rtl/ball_manager.sv : (41, 52): Implicit net declaration, symbol random has not been declared in module ball_manager.
-# Error: VCP5103 rtl/ball_manager.sv : (48, 24): Undeclared identifier: i.
-# Error: VCP5103 rtl/ball_manager.sv : (49, 24): Undeclared identifier: i.
-# Error: VCP5103 rtl/ball_manager.sv : (50, 25): Undeclared identifier: i.
-# Error: VCP5103 rtl/ball_manager.sv : (51, 25): Undeclared identifier: i.
-# Compile failure 4 Errors 0 Warnings  Analysis time: 0[s].
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Info: VCP2876 rtl/ball_manager.sv : (41, 52): Implicit net declaration, symbol random has not been declared in module ball_manager.
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Info: VCP2876 rtl/ball_manager.sv : (41, 52): Implicit net declaration, symbol random has not been declared in module ball_manager.
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-asim -drc -O5 +access +r +m+tb_ball tb_ball
+asim -drc -O5 +accb +accr +access +r tb_top_module
 # ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Elaboration time 0.0 [s].
 # VSIM: Stack memory: 32MB
 # VSIM: Retval memory: 32MB
@@ -634,177 +1272,177 @@ asim -drc -O5 +access +r +m+tb_ball tb_ball
 # KERNEL: Time resolution set to 1ps.
 # ELAB2: Create instances complete.
 # SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (8): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (41): Length of connection (1) does not match the length of port "out" (20) on instance "/tb_ball/manager_inst/random_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (25): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.2 [s]
-# SLP: Finished : 0.2 [s]
-# SLP: 0 primitives and 8 (100.00%) other processes in SLP
-# SLP: 43 (100.00%) signals in SLP and 0 interface signals
-# ELAB2: Elaboration final pass complete - time: 0.3 [s].
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 10021 (100.00%) other processes in SLP
+# SLP: 19090 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4615 kB (elbread=427 elab2=4116 kernel=71 sdf=0)
+# Allocation: Simulator allocated 5500 kB (elbread=466 elab2=4962 kernel=71 sdf=0)
 # KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:47 AM, Sunday, November 8, 2026
+#  2:47 AM, Thursday, November 12, 2026
 #  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
+run 100000 ns
+# KERNEL: stopped at time: 100 us
+run 100000 ns
+# KERNEL: stopped at time: 200 us
+run 100000 ns
+# KERNEL: stopped at time: 300 us
+run 100000 ns
+# KERNEL: stopped at time: 400 us
+run 100000 ns
+# KERNEL: stopped at time: 500 us
+# add wave -noreg {/tb_top_module/top_inst/update}
+# VSIM: 1 object(s) traced.
+endsim
+# VSIM: Simulation has finished.
+asim -drc -O5 +accb +accr +access +r tb_top_module
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 10021 (100.00%) other processes in SLP
+# SLP: 19090 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5500 kB (elbread=466 elab2=4962 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  2:49 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
+run 100000 ns
+# KERNEL: stopped at time: 100 us
+run 100000 ns
+# KERNEL: stopped at time: 200 us
+endsim
+# VSIM: Simulation has finished.
+asim -drc -O5 +accb +accr +access +r tb_top_module
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 10021 (100.00%) other processes in SLP
+# SLP: 19090 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5500 kB (elbread=466 elab2=4962 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  2:52 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
+run 100000 ns
+# KERNEL: stopped at time: 100 us
+endsim
+# VSIM: Simulation has finished.
+asim -drc -O5 +accb +accr +access +r tb_top_module
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 10021 (100.00%) other processes in SLP
+# SLP: 19090 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5500 kB (elbread=466 elab2=4962 kernel=71 sdf=0)
+# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
+#  2:52 AM, Thursday, November 12, 2026
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
+run 1000000 ns
+# KERNEL: stopped at time: 1 ms
 run
-# RUNTIME: Info: RUNTIME_0068 tb_ball.sv (22): $finish called.
-# KERNEL: Time: 2020 ns,  Iteration: 0,  Instance: /tb_ball,  Process: @INITIAL#20_1@.
-# KERNEL: stopped at time: 2020 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Error: VCP2000 rtl/ball_manager.sv : (14, 6): Syntax error. Unexpected token: ).
-# Error: VCP2000 rtl/ball_manager.sv : (30, 9): Syntax error. Unexpected token: ball[_IDENTIFIER].
-# Error: VCP2000 rtl/ball_manager.sv : (43, 11): Syntax error. Unexpected token: always[_ALWAYS].
-# Error: VCP2000 rtl/ball_manager.sv : (46, 21): Syntax error. Unexpected token: random_generator[_IDENTIFIER].
-# Error: VCP2020 rtl/ball_manager.sv : (57, 20): begin...end pair(s) mismatch detected. 2 <end> tokens are missing.
-# Error: VCP2020 rtl/ball_manager.sv : (57, 20): case/x/z...endcase pair(s) mismatch detected. 1 <endcase> tokens are missing.
-# Error: VCP2020 rtl/ball_manager.sv : (57, 20): module/macromodule...endmodule pair(s) mismatch detected. 1 <endmodule> tokens are missing.
-# Error: VCP2000 rtl/ball_manager.sv : (57, 20): Syntax error. Unexpected token: end[_END].
-# Error: VCP2000 rtl/ball_manager.sv : (63, 20): Syntax error. Unexpected token: end[_END].
-# Error: VCP1041 testbench/tb_ball.sv : (1, 11): Compiler directive `timescale is not allowed inside a module.
-# Compile failure 10 Errors 0 Warnings  Analysis time: 0[s].
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Info: VCP2876 rtl/ball_manager.sv : (46, 52): Implicit net declaration, symbol random has not been declared in module ball_manager.
-# Warning: VCP2597 testbench/tb_ball.sv : (8, 1): Some unconnected ports remain at instance: "manager_inst". Module "ball_manager" has unconnected port(s) : "x", "y", "vx", "vy".
-# Unit top modules: tb_ball.
+endsim
+# KERNEL: stopped at time: 2554310 ns
+# VSIM: Simulation has finished.
+asim -drc -O5 +accb +accr +access +r tb_top_module
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/graphics/vga_controller.sv $dsn/src/testbench/tb_top_module.sv
+# Warning: VCP2597 testbench/tb_top_module.sv : (8, 1): Some unconnected ports remain at instance: "top_inst". Module "FPGA_Ball_Physics" has unconnected port(s) : "HSYNC", "VSYNC", "VIDEOON", "outColor".
+# Unit top modules: tb_top_module.
 # Compile success 0 Errors 1 Warnings  Analysis time: 0[s].
 # done
-endsim
-# VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Info: VCP2876 rtl/ball_manager.sv : (46, 52): Implicit net declaration, symbol random has not been declared in module ball_manager.
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-asim -drc -O5 +access +r +m+tb_ball tb_ball
 # ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "FPGA_Ball_Physics" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "vga_controller" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (46): Length of connection (1) does not match the length of port "out" (20) on instance "/tb_ball/manager_inst/random_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (30): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.4 [s]
-# SLP: Finished : 0.5 [s]
-# SLP: 0 primitives and 12 (100.00%) other processes in SLP
-# SLP: 47 (92.16%) signals in SLP and 4 (7.84%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.5 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4636 kB (elbread=427 elab2=4137 kernel=71 sdf=0)
-# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:51 AM, Sunday, November 8, 2026
-#  Simulation has been initialized
-run 100 ns
-# KERNEL: stopped at time: 100 ns
-run 100 ns
-# KERNEL: stopped at time: 200 ns
-run 100 ns
-# KERNEL: stopped at time: 300 ns
-run 100 ns
-# KERNEL: stopped at time: 400 ns
-run 100 ns
-# KERNEL: stopped at time: 500 ns
-endsim
-# VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Finished. Using existing simulator library
-# SLP: 0 primitives and 12 (100.00%) other processes in SLP
-# SLP: 47 (92.16%) signals in SLP and 4 (7.84%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.0 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4636 kB (elbread=427 elab2=4137 kernel=71 sdf=0)
-# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:52 AM, Sunday, November 8, 2026
-#  Simulation has been initialized
-# add wave -noreg {/tb_ball/x}
-# VSIM: 1 object(s) traced.
-# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-run 100 ns
-# KERNEL: stopped at time: 100 ns
-run 100 ns
-# KERNEL: stopped at time: 200 ns
-run 100 ns
-# KERNEL: stopped at time: 300 ns
-run 100 ns
-# KERNEL: stopped at time: 400 ns
-run 100 ns
-# KERNEL: stopped at time: 500 ns
-run 100 ns
-# KERNEL: stopped at time: 600 ns
-endsim
-# VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/testbench/tb_ball.sv
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "color_generator" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "physics_engine" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Warning: ELBREAD_0049 The "bounds_detector" design unit does not have a time unit/precision defined but other design units do.
 # ELBREAD: Elaboration time 0.0 [s].
 # KERNEL: Main thread initiated.
 # SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
@@ -815,508 +1453,29 @@ alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/testbench/tb_ba
 # ELAB2: Create instances complete.
 # SLP: Started
 # SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (46): Length of connection (1) does not match the length of port "out" (20) on instance "/tb_ball/manager_inst/random_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (30): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.4 [s]
-# SLP: Finished : 0.5 [s]
-# SLP: 0 primitives and 12 (100.00%) other processes in SLP
-# SLP: 47 (92.16%) signals in SLP and 4 (7.84%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.5 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4636 kB (elbread=427 elab2=4137 kernel=71 sdf=0)
-# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:53 AM, Sunday, November 8, 2026
-#  Simulation has been initialized
-# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-run 100 ns
-# KERNEL: stopped at time: 100 ns
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Info: VCP2876 rtl/ball_manager.sv : (46, 52): Implicit net declaration, symbol random has not been declared in module ball_manager.
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-endsim
-# VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (46): Length of connection (1) does not match the length of port "out" (20) on instance "/tb_ball/manager_inst/random_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (30): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
+# SLP: Warning: SLP_0011 ball_manager.sv (60): Length of connection (21) does not match the length of port "xO" (20) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
+# SLP: Warning: SLP_0011 ball_manager.sv (60): Length of connection (20) does not match the length of port "yO" (19) on instance "/tb_top_module/top_inst/manager_inst/boundsInst".
 # SLP: Elaboration phase ... done : 0.1 [s]
 # SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.4 [s]
-# SLP: Finished : 0.5 [s]
-# SLP: 0 primitives and 12 (100.00%) other processes in SLP
-# SLP: 47 (92.16%) signals in SLP and 4 (7.84%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.5 [s].
+# SLP: Generation phase ... done : 0.8 [s]
+# SLP: Finished : 1.0 [s]
+# SLP: 0 primitives and 10021 (100.00%) other processes in SLP
+# SLP: 19090 (99.93%) signals in SLP and 13 (0.07%) interface signals
+# ELAB2: Elaboration final pass complete - time: 1.0 [s].
 # KERNEL: SLP loading done - time: 0.0 [s].
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: SLP simulation initialization done - time: 0.0 [s].
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4636 kB (elbread=427 elab2=4137 kernel=71 sdf=0)
+# Allocation: Simulator allocated 5502 kB (elbread=466 elab2=4965 kernel=71 sdf=0)
 # KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:54 AM, Sunday, November 8, 2026
+#  2:59 AM, Thursday, November 12, 2026
 #  Simulation has been initialized
 # Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-run 100 ns
-# KERNEL: stopped at time: 100 ns
-endsim
-# VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/testbench/tb_ball.sv
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (46): Length of connection (1) does not match the length of port "out" (20) on instance "/tb_ball/manager_inst/random_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (30): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.1 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.4 [s]
-# SLP: Finished : 0.5 [s]
-# SLP: 0 primitives and 12 (100.00%) other processes in SLP
-# SLP: 47 (92.16%) signals in SLP and 4 (7.84%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.5 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4636 kB (elbread=427 elab2=4137 kernel=71 sdf=0)
-# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:55 AM, Sunday, November 8, 2026
-#  Simulation has been initialized
-# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-run 100 ns
-# KERNEL: stopped at time: 100 ns
-# add wave -noreg {/tb_ball/clk}
-# VSIM: 1 object(s) traced.
-run 100 ns
-# KERNEL: stopped at time: 200 ns
-run 100 ns
-# KERNEL: stopped at time: 300 ns
-endsim
-# VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Finished. Using existing simulator library
-# SLP: 0 primitives and 12 (100.00%) other processes in SLP
-# SLP: 47 (92.16%) signals in SLP and 4 (7.84%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.0 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4636 kB (elbread=427 elab2=4137 kernel=71 sdf=0)
-# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:56 AM, Sunday, November 8, 2026
-#  Simulation has been initialized
-# add wave -noreg {/tb_ball/clk}
-# add wave -noreg {/tb_ball/arst}
-# VSIM: 2 object(s) traced.
-# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-# add wave -noreg {/tb_ball/x}
-# VSIM: 1 object(s) traced.
-run 100 ns
-# KERNEL: stopped at time: 100 ns
-endsim
-# VSIM: Simulation has finished.
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/rtl/ball.sv $dsn/src/rtl/ball_manager.sv $dsn/src/rtl/random_generator.sv $dsn/src/testbench/tb_ball.sv
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (30): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.1 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.4 [s]
-# SLP: Finished : 0.5 [s]
-# SLP: 0 primitives and 12 (100.00%) other processes in SLP
-# SLP: 46 (92.00%) signals in SLP and 4 (8.00%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.5 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4636 kB (elbread=427 elab2=4137 kernel=71 sdf=0)
-# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:59 AM, Sunday, November 8, 2026
-#  Simulation has been initialized
-run 100 ns
-# KERNEL: stopped at time: 100 ns
-endsim
-# VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/testbench/tb_ball.sv
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (30): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.1 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.4 [s]
-# SLP: Finished : 0.5 [s]
-# SLP: 0 primitives and 12 (100.00%) other processes in SLP
-# SLP: 46 (92.00%) signals in SLP and 4 (8.00%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.5 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4636 kB (elbread=427 elab2=4137 kernel=71 sdf=0)
-# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  1:59 AM, Sunday, November 8, 2026
-#  Simulation has been initialized
-# add wave -noreg {/tb_ball/x}
-# VSIM: 1 object(s) traced.
-# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-run 100 ns
-# KERNEL: stopped at time: 100 ns
-run 100 ns
-# KERNEL: stopped at time: 200 ns
-run 100 ns
-# KERNEL: stopped at time: 300 ns
-run 100 ns
-# KERNEL: stopped at time: 400 ns
-run 100 ns
-# KERNEL: stopped at time: 500 ns
-run 100 ns
-# KERNEL: stopped at time: 600 ns
 run
-# RUNTIME: Info: RUNTIME_0068 tb_ball.sv (31): $finish called.
-# KERNEL: Time: 2020 ns,  Iteration: 0,  Instance: /tb_ball,  Process: @INITIAL#29_1@.
-# KERNEL: stopped at time: 2020 ns
+# RUNTIME: Info: RUNTIME_0068 tb_top_module.sv (22): $finish called.
+# KERNEL: Time: 100020 ns,  Iteration: 0,  Instance: /tb_top_module,  Process: @INITIAL#20_1@.
+# KERNEL: stopped at time: 100020 ns
 # VSIM: Simulation has finished. There are no more test vectors to simulate.
 endsim
-# VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/testbench/tb_ball.sv
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (30): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.4 [s]
-# SLP: Finished : 0.5 [s]
-# SLP: 0 primitives and 12 (100.00%) other processes in SLP
-# SLP: 46 (92.00%) signals in SLP and 4 (8.00%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.5 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4636 kB (elbread=427 elab2=4137 kernel=71 sdf=0)
-# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  2:01 AM, Sunday, November 8, 2026
-#  Simulation has been initialized
-# add wave -noreg {/tb_ball/x}
-# VSIM: 1 object(s) traced.
-# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-run
-# RUNTIME: Info: RUNTIME_0068 tb_ball.sv (31): $finish called.
-# KERNEL: Time: 10020 ns,  Iteration: 0,  Instance: /tb_ball,  Process: @INITIAL#29_1@.
-# KERNEL: stopped at time: 10020 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-endsim
-# VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/testbench/tb_ball.sv
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (30): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.0 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.4 [s]
-# SLP: Finished : 0.5 [s]
-# SLP: 0 primitives and 12 (100.00%) other processes in SLP
-# SLP: 46 (92.00%) signals in SLP and 4 (8.00%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.5 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4636 kB (elbread=427 elab2=4137 kernel=71 sdf=0)
-# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  2:02 AM, Sunday, November 8, 2026
-#  Simulation has been initialized
-# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-run
-# RUNTIME: Info: RUNTIME_0068 tb_ball.sv (31): $finish called.
-# KERNEL: Time: 11020 ns,  Iteration: 0,  Instance: /tb_ball,  Process: @INITIAL#29_1@.
-# KERNEL: stopped at time: 11020 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-endsim
-# VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-alog -O2 -sve -msg 5 -j -sv2k23 -work FPGA-Ball-Physics $dsn/src/testbench/tb_ball.sv
-# Unit top modules: tb_ball.
-# Compile success 0 Errors 0 Warnings  Analysis time: 0[s].
-# done
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bsize" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Gravity" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Dampen" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bounce" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 tb_ball.sv (13): Length of connection (32) does not match the length of port "Bcount" (10) on instance "/tb_ball/manager_inst".
-# SLP: Warning: SLP_0011 ball_manager.sv (30): Length of connection (20) does not match the length of port "yI" (19) on instance "/tb_ball/manager_inst/ballInst".
-# SLP: Elaboration phase ... done : 0.1 [s]
-# SLP: Generation phase ...
-# SLP: Generation phase ... done : 0.4 [s]
-# SLP: Finished : 0.5 [s]
-# SLP: 0 primitives and 12 (100.00%) other processes in SLP
-# SLP: 46 (92.00%) signals in SLP and 4 (8.00%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.5 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4636 kB (elbread=427 elab2=4137 kernel=71 sdf=0)
-# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  2:07 AM, Sunday, November 8, 2026
-#  Simulation has been initialized
-run
-endsim
-# KERNEL: stopped at time: 10695 ns
-# VSIM: Simulation has finished.
-asim -drc -O5 +access +r +m+tb_ball tb_ball
-# ELBREAD: Elaboration process.
-# ELBREAD: Warning: ELBREAD_0049 The "ball_manager" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "ball" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Warning: ELBREAD_0049 The "random_generator" design unit does not have a time unit/precision defined but other design units do.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-# KERNEL: Main thread initiated.
-# SLP: Error: SLP_0228 asim switch "-drc" is not supported when SLP is enabled
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Finished. Using existing simulator library
-# SLP: 0 primitives and 12 (100.00%) other processes in SLP
-# SLP: 46 (92.00%) signals in SLP and 4 (8.00%) interface signals
-# ELAB2: Elaboration final pass complete - time: 0.0 [s].
-# KERNEL: SLP loading done - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: SLP simulation initialization done - time: 0.0 [s].
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 4636 kB (elbread=427 elab2=4137 kernel=71 sdf=0)
-# KERNEL: ASDB file was created in location D:\FPGA-Ball-Physics\FPGA-Ball-Physics\src\wave.asdb
-#  2:08 AM, Sunday, November 8, 2026
-#  Simulation has been initialized
-# add wave -noreg {/tb_ball/x}
-# VSIM: 1 object(s) traced.
-# Waveform file 'untitled.awc' connected to 'D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/wave.asdb'.
-run
-endsim
-# KERNEL: stopped at time: 1513435 ns
 # VSIM: Simulation has finished.
