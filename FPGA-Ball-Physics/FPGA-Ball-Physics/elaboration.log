@@ -1,18 +1,21 @@
-Active-HDL 17.0.292.10043 2026-11-08 14:19:01
+Active-HDL 17.0.292.10043 2026-11-12 02:59:42
 
 Elaboration top modules:
-Verilog Module                tb_ball
+Verilog Module                tb_top_module
 
 
 ------------------------------------------------------------------------------------------------------
 Verilog Module          | Library           | Info | Compiler Version           | Compilation Options
 ------------------------------------------------------------------------------------------------------
-tb_ball                 | FPGA-Ball-Physics |      | 17.0.292.10043 (Windows64) | -O2 -j -sv2k23
+tb_top_module           | FPGA-Ball-Physics |      | 17.0.292.10043 (Windows64) | -O2 -j -sv2k23
+FPGA_Ball_Physics       | FPGA-Ball-Physics |      | 17.0.292.10043 (Windows64) | -O2 -j -sv2k23
 ball_manager            | FPGA-Ball-Physics |      | 17.0.292.10043 (Windows64) | -O2 -j -sv2k23
+vga_controller          | FPGA-Ball-Physics |      | 17.0.292.10043 (Windows64) | -O2 -j -sv2k23
 random_generator        | FPGA-Ball-Physics |      | 17.0.292.10043 (Windows64) | -O2 -j -sv2k23
 color_generator         | FPGA-Ball-Physics |      | 17.0.292.10043 (Windows64) | -O2 -j -sv2k23
 physics_engine          | FPGA-Ball-Physics |      | 17.0.292.10043 (Windows64) | -O2 -j -sv2k23
 bounds_detector         | FPGA-Ball-Physics |      | 17.0.292.10043 (Windows64) | -O2 -j -sv2k23
+ball_renderer           | FPGA-Ball-Physics |      | 17.0.292.10043 (Windows64) | -O2 -j -sv2k23
 ------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------------
@@ -20,9 +23,3 @@ Library                 | Comment
 ------------------------------------------------------------------------------------------------------
 FPGA-Ball-Physics       | None
 ------------------------------------------------------------------------------------------------------
-
-
-Simulation Options: asim -drc -O5 +accb +accr +access +r tb_ball
-
-
-The performance of simulation is reduced. Version Student Edition

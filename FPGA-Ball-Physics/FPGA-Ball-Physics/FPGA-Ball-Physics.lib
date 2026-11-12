@@ -1,12 +1,18 @@
-timestamp=1794140339209
+timestamp=1794445182506
 
 [~A]
+CUSP_Counter=20
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/ball.sv_ball_manager.sv_tb_ball.sv=0*40455*41725
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/graphics/vga_controller.sv_tb_top_module.sv=0*626796*628091
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball.sv_ball_manager.sv_random_generator.sv_color_generator.sv_tb_ball.sv=0*164176*166513
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball.sv_ball_manager.sv_random_generator.sv_tb_ball.sv=0*109800*111526
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball.sv_random_generator.sv=0*73537*74211
-D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball_manager.sv=0*268848*270167
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball_manager.sv=0*623848*625327
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball_manager.sv_random_generator.sv_color_generator.sv_physics_engine.sv_bounds_detector.sv_tb_ball.sv=0*335213*338395
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball_manager.sv_random_generator.sv_color_generator.sv_physics_engine.sv_bounds_detector.sv_tb_ball.sv_tb-vga-graphics.sv_vga_controller.sv=0*368552*372443
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball_manager.sv_random_generator.sv_color_generator.sv_physics_engine.sv_bounds_detector.sv_tb_ball.sv_tb-vga-graphics.sv_vga_controller.sv_ball_renderer.sv=0*392314*396526
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball_manager.sv_random_generator.sv_color_generator.sv_physics_engine.sv_bounds_detector.sv_tb_ball.sv_tb_vga_graphics.sv_vga_controller.sv_ball_renderer.sv=0*434863*439139
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball_manager.sv_random_generator.sv_color_generator.sv_physics_engine.sv_bounds_detector.sv_tb_ball.sv_vga_controller.sv=0*361473*365185
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball_manager.sv_random_generator.sv_color_generator.sv_physics_engine.sv_tb_ball.sv=0*259303*261954
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/ball_manager.sv_random_generator.sv_color_generator.sv_tb_ball.sv=0*171032*173121
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/bounds_detector.sv=0*331840*332633
@@ -15,21 +21,33 @@ D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/physics_engine.sv_ball_manager.sv
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/random_generator.sv=0*71740*72278
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/rtl/random_generator.sv_tb_ball.sv=0*59086*59971
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/tb_ball.sv=0*32675*33248
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/testbench/tb-vga-graphics.sv=0*380427*381034
 D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/testbench/tb_ball.sv=0*272825*273520
-LastVerilogToplevel=tb_ball
-ModifyID=105
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/testbench/tb_top_module.sv=0*562140*562745
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/testbench/tb_vga_graphics.sv=0*405878*406469
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/top_module.sv_ball_manager.sv_random_generator.sv_color_generator.sv_physics_engine.sv_bounds_detector.sv_tb_ball.sv_tb_vga_graphics.sv_tb_top_module.sv_vga_controller.sv_ball_renderer.sv=0*614534*619413
+D:/FPGA-Ball-Physics/FPGA-Ball-Physics/src/top_module.sv_ball_manager.sv_random_generator.sv_color_generator.sv_physics_engine.sv_bounds_detector.sv_tb_ball.sv_tb_vga_graphics.sv_vga_controller.sv_ball_renderer.sv=0*515284*519906
+LastVerilogToplevel=tb_top_module
+ModifyID=148
 Version=74
 
 [~MFT]
-0=11|0FPGA-Ball-Physics.mgf|338395|182608
-1=14|1FPGA-Ball-Physics.mgf|959639|935369
-3=28|3FPGA-Ball-Physics.mgf|701073|682204
+0=5|0FPGA-Ball-Physics.mgf|628091|329337
+1=6|1FPGA-Ball-Physics.mgf|1929428|1890499
+3=12|3FPGA-Ball-Physics.mgf|1511361|1481688
 
 [$root]
-A/$root=22|||1*942750
-BinW64/$root=3*683963
-SLP=3*684078
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|c73a565f2ade592f8ac1c68f484c9216db042a94f279d3248027575cb5cbe949
+A/$root=22|||1*1925240
+BinW64/$root=3*1506711
+SLP=3*1506826
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|c73a565f2ade592f8ac1c68f484c9216bc687aff133ef093c4a7b67fc7dbf914
+
+[FPGA_Ball_Physics]
+A/FPGA_Ball_Physics=22|../src/top_module.sv|1|1*1878455
+BinW64/FPGA_Ball_Physics=3*1467769
+R=../src/top_module.sv|1
+SLP=3*1469121
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|3321399477b826b6571c81b254a4b125f53a928aec5454d314c152e61baa36b4d13f094e7f207624337b5bb80955c9b7
 
 [Flip_Flop]
 A/Flip_Flop=22|../src/rtl/random_generator.sv|15|1*177475
@@ -46,32 +64,39 @@ SLP=3*290129
 Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|90f242b29300a057d8fd7974b0c6f4840b8467c9ec4aa9a3a7cac3315260b743
 
 [ball_manager]
-A/ball_manager=22|../src/rtl/ball_manager.sv|1|1*943172
-BinW64/ball_manager=3*684162
+A/ball_manager=22|../src/rtl/ball_manager.sv|1|1*1918670
+BinW64/ball_manager=3*1501306
 R=../src/rtl/ball_manager.sv|1
-SLP=3*687548
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|d52c8230b21de0dbfad3a07b7c02074b7e19aa0b3f041d167c8d9e020c9cd8a0b139226c918a3b7c95038aa84404502e
+SLP=3*1505037
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|d52c8230b21de0dbfad3a07b7c02074b7e19aa0b3f041d167c8d9e020c9cd8a01167794a1294bd809b7c363c735bf0fd
+
+[ball_renderer]
+A/ball_renderer=22|../src/graphics/ball_renderer.sv|1|1*1893171
+BinW64/ball_renderer=3*1478698
+R=../src/graphics/ball_renderer.sv|1
+SLP=3*1480861
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|5b6bd7ed7cac9c184b1fdded397c9f8fd9ca07954f93ed16a43cbd41f688d5c57b3c4a1bd9eef4aa9f4846dc886bfd2b
 
 [bounds_detector]
-A/bounds_detector=22|../src/rtl/bounds_detector.sv|1|1*957054
-BinW64/bounds_detector=3*697162
+A/bounds_detector=22|../src/rtl/bounds_detector.sv|1|1*1902893
+BinW64/bounds_detector=3*1489478
 R=../src/rtl/bounds_detector.sv|1
-SLP=3*699359
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|c940dce3b03cf5f7af8de9435886212456262f0c67e215f8172cec9964a0cab548be3cf64ae1d541a3f769f9e9acc9e6
+SLP=3*1491676
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|c940dce3b03cf5f7af8de9435886212456262f0c67e215f8172cec9964a0cab56b2f888c7f518648b400b0b3333ee4e0
 
 [color_generator]
-A/color_generator=22|../src/rtl/color_generator.sv|1|1*952273
-BinW64/color_generator=3*690297
+A/color_generator=22|../src/rtl/color_generator.sv|1|1*1898112
+BinW64/color_generator=3*1482612
 R=../src/rtl/color_generator.sv|1
-SLP=3*692699
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|551b762f9e522f331f5b32758f20f7684d6614e5f85d0ec346f64ad7bcf1bdcdd920306dcc090bb96010eb4a984b0d4c
+SLP=3*1485017
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|551b762f9e522f331f5b32758f20f7684d6614e5f85d0ec346f64ad7bcf1bdcd1de1c4d773b488ed145df7772a775dcb
 
 [physics_engine]
-A/physics_engine=22|../src/rtl/physics_engine.sv|1|1*954654
-BinW64/physics_engine=3*694076
+A/physics_engine=22|../src/rtl/physics_engine.sv|1|1*1900493
+BinW64/physics_engine=3*1486394
 R=../src/rtl/physics_engine.sv|1
-SLP=3*696285
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|f4f9f2638aaa37779ffbb4a0468dbdbe66cb5c612456222eaad49ca81384a859400510b027e7471ec70915a6094976d3
+SLP=3*1488601
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|f4f9f2638aaa37779ffbb4a0468dbdbe66cb5c612456222eaad49ca81384a859bddb83004c3f6e9c989129f8cec4be6f
 
 [physiscs_engine]
 A/physiscs_engine=22|../src/rtl/physics_engine.sv|1|1*490554
@@ -81,28 +106,54 @@ SLP=3*323241
 Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|2f6c0ba942a717739a3bdf9b2f45dc94b6084e2573743f27e4c357c896b4f467119db0cc8bcb9226b456553a39f50992
 
 [random_generator]
-A/random_generator=22|../src/rtl/random_generator.sv|1|1*950938
-BinW64/random_generator=3*689347
+A/random_generator=22|../src/rtl/random_generator.sv|1|1*1896777
+BinW64/random_generator=3*1481662
 R=../src/rtl/random_generator.sv|1
-SLP=3*689936
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|a250fdc9b9e60db0ecc8dbd9d2c650ff59f0eb5a06119eb2072cca42c7d3108d94b8bccf4857cb5d15c3a48428a0f72f
+SLP=3*1482251
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|a250fdc9b9e60db0ecc8dbd9d2c650ff59f0eb5a06119eb2072cca42c7d3108d058c5333bc75f21e83fde21e9771ab2f
 
 [tb_ball]
-A/tb_ball=22|../src/testbench/tb_ball.sv|3|1*959639
-BinW64/tb_ball=3*700422
+A/tb_ball=22|../src/testbench/tb_ball.sv|3|1*1905478
+BinW64/tb_ball=3*1492739
 R=../src/testbench/tb_ball.sv|3
-SLP=3*701073
-Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|ebc0a1efcc5797b5a3dfdc7e7844f4c426527262ddaa47cb266f3a3c4d9b973a9cf3b2705f6515836b37f1ba11f8f53b
+SLP=3*1493391
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|ebc0a1efcc5797b5a3dfdc7e7844f4c426527262ddaa47cb266f3a3c4d9b973ab4d4267a74085bad3d3873f954b3cc54
+
+[tb_top_module]
+A/tb_top_module=22|../src/testbench/tb_top_module.sv|3|1*1929428
+BinW64/tb_top_module=3*1510704
+R=../src/testbench/tb_top_module.sv|3
+SLP=3*1511361
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|a7c26158b7abc1b25d5fd301a113105d9ac4c132f265c8cab24e55e2285103620498a1b022847b610e9497935861477a
+
+[tb_vga_graphics]
+A/tb_vga_graphics=22|../src/testbench/tb_vga_graphics.sv|3|1*1907959
+BinW64/tb_vga_graphics=3*1493670
+R=../src/testbench/tb_vga_graphics.sv|3
+SLP=3*1494330
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|2e0f8a1a78754c1dda06a9011da108f791b1f252fc2c1ca6f52ab5a0ee0a00436e77586dbca6886626da0bd4681e19fc
+
+[vga_controller]
+A/vga_controller=22|../src/graphics/vga_controller.sv|1|1*1925694
+BinW64/vga_controller=3*1506910
+R=../src/graphics/vga_controller.sv|1
+SLP=3*1509626
+Version=17.0.292.10043 (Windows64)|0000000e789cd3f53752d0cd52d02d2e33ca363206001996039e|80e72af7bdd70080b9fabc5647ea1386f82f9b40685d3b82218b7e8cb758d7009baa9a7e47165b487c5d9ee03c444030
 
 [~U]
-$root=12|0*333131|
+$root=12|0*625822|
+FPGA_Ball_Physics=12|0*611252|
 Flip_Flop=12|0*65276|
 ball=12|0*162814|
-ball_manager=12|0*333473|
-bounds_detector=12|0*334697|
-color_generator=12|0*334105|
-physics_engine=12|0*334404|
+ball_manager=12|0*623419|
+ball_renderer=12|0*612469|
+bounds_detector=12|0*613565|
+color_generator=12|0*612973|
+physics_engine=12|0*613272|
 physiscs_engine=12|0*174974||0x10
-random_generator=12|0*333882|
-tb_ball=12|0*334984||0x10
+random_generator=12|0*612750|
+tb_ball=12|0*613852||0x10
+tb_top_module=12|0*626602||0x10
+tb_vga_graphics=12|0*614081||0x10
+vga_controller=12|0*626212|
                                                                 
